@@ -1,0 +1,5299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <Header>
+    <FileName>C:\git\Adventurer\Adventurer\adv01.dat</FileName>
+    <Unknown>5953</Unknown>
+    <MaxCarry>6</MaxCarry>
+    <StartRoom>11</StartRoom>
+    <TotalTreasures>13</TotalTreasures>
+    <WordLength>3</WordLength>
+    <LightDuration>125</LightDuration>
+    <TreasureRoom>3</TreasureRoom>
+  </Header>
+  <Actions Count="170">
+    <Action index="0" Auto="75">
+      <Verb>0</Verb>
+      <Noun>75</Noun>
+      <Comment>FISH ESCAPE</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>8</arg>
+          <Arg1Item>*GOLDEN FISH*</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>19</arg>
+          <Arg1Item>*GOLDEN NET*</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>117</Argument>
+          <Description>A Output message: Fish have escaped back to the lake.</Description>
+        </Action>
+        <Action>
+          <Argument>62</Argument>
+          <Description>item ARG1 is moved to room ARG2: 8 10</Description>
+          <arg1>8</arg1>
+          <arg2>10</arg2>
+          <Arg1Item>*GOLDEN FISH*</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="1" Auto="10">
+      <Verb>0</Verb>
+      <Noun>10</Noun>
+      <Comment>DIE BITES</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>21</arg>
+          <Arg1Item>Infected chigger bites</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>6</ConditionID>
+          <Description>player not it room arg</Description>
+          <arg>33</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>13</Argument>
+          <Description>A Output message: My bites have rotted my whole body!</Description>
+        </Action>
+        <Action>
+          <Argument>61</Argument>
+          <Description>Death, clear dark flag, move to last room</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="2" Auto="10">
+      <Verb>0</Verb>
+      <Noun>10</Noun>
+      <Comment>BITE INFECT</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>20</arg>
+          <Arg1Item>Chigger bites</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>7</arg>
+          <Arg1Item>Evil smelling mud</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>12</Argument>
+          <Description>A Output message:   My chigger bites are now INFECTED!  </Description>
+        </Action>
+        <Action>
+          <Argument>74</Argument>
+          <Description>take item ARG1, no check done to see if can carry: 21</Description>
+          <arg1>21</arg1>
+          <Arg1Item>Infected chigger bites</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>59</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 20</Description>
+          <arg1>20</arg1>
+          <Arg1Item>Chigger bites</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="3" Auto="8">
+      <Verb>0</Verb>
+      <Noun>8</Noun>
+      <Comment>BEES DIE</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>26</arg>
+          <Arg1Item>Bees in a bottle</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>8</ConditionID>
+          <Description>bitflag arg is false</Description>
+          <arg>17</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>17</Argument>
+          <Description>A Output message: The bees all suffocated and disappeared</Description>
+        </Action>
+        <Action>
+          <Argument>72</Argument>
+          <Description>swap item locations ARG1 ARG2: 26 13</Description>
+          <arg1>26</arg1>
+          <arg2>13</arg2>
+          <Arg1Item>Bees in a bottle</Arg1Item>
+          <Arg2Item>Empty bottle</Arg2Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="4" Auto="100">
+      <Verb>0</Verb>
+      <Noun>100</Noun>
+      <Comment>HIT MIRROR</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>5</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>55</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 38</Description>
+          <arg1>38</arg1>
+          <Arg1Item>*MAGIC MIRROR*</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>62</Argument>
+          <Description>item ARG1 is moved to room ARG2: 41 21</Description>
+          <arg1>41</arg1>
+          <arg2>21</arg2>
+          <Arg1Item>Broken glass</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>60</Argument>
+          <Description>set ARG1 flag: 5</Description>
+          <arg1>5</arg1>
+        </Action>
+        <Action>
+          <Argument>64</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="5" Auto="100">
+      <Verb>0</Verb>
+      <Noun>100</Noun>
+      <Comment>IN HADES</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>24</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>37</Argument>
+          <Description>A Output message: You lost *ALL* treasures.</Description>
+        </Action>
+        <Action>
+          <Argument>63</Argument>
+          <Description>game over</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="6" Auto="5">
+      <Verb>0</Verb>
+      <Noun>5</Noun>
+      <Comment>MUD OFF</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>7</arg>
+          <Arg1Item>Evil smelling mud</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>12</arg>
+          <Arg1Item>Water in bottle</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>40</Argument>
+          <Description>A Output message: The mud dried up and fell off.</Description>
+        </Action>
+        <Action>
+          <Argument>62</Argument>
+          <Description>item ARG1 is moved to room ARG2: 7 1</Description>
+          <arg1>7</arg1>
+          <arg2>1</arg2>
+          <Arg1Item>Evil smelling mud</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="7" Auto="8">
+      <Verb>0</Verb>
+      <Noun>8</Noun>
+      <Comment>BIT CHIG</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>20</arg>
+          <Arg1Item>Chigger bites</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>21</arg>
+          <Arg1Item>Infected chigger bites</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>42</arg>
+          <Arg1Item>Chiggers</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>7</arg>
+          <Arg1Item>Evil smelling mud</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>74</Argument>
+          <Description>take item ARG1, no check done to see if can carry: 20</Description>
+          <arg1>20</arg1>
+          <Arg1Item>Chigger bites</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>45</Argument>
+          <Description>A Output message:   I'm bitten by chiggers.  </Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="8" Auto="8">
+      <Verb>0</Verb>
+      <Noun>8</Noun>
+      <Comment>BEE STING</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>24</arg>
+          <Arg1Item>Large african bees</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>11</ConditionID>
+          <Description>item arg not carried or in room with player</Description>
+          <arg>7</arg>
+          <Arg1Item>Evil smelling mud</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>15</Argument>
+          <Description>A Output message: Bees sting me</Description>
+        </Action>
+        <Action>
+          <Argument>61</Argument>
+          <Description>Death, clear dark flag, move to last room</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="9" Auto="100">
+      <Verb>0</Verb>
+      <Noun>100</Noun>
+      <Comment>LITE</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>5</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>15</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>57</Argument>
+          <Description>clear darkness flag</Description>
+        </Action>
+        <Action>
+          <Argument>76</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="10" Auto="50">
+      <Verb>0</Verb>
+      <Noun>50</Noun>
+      <Comment>FISH DIE</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>8</arg>
+          <Arg1Item>*GOLDEN FISH*</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>12</arg>
+          <Arg1Item>Water in bottle</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>48</Argument>
+          <Description>A Output message: Too dry, the fish died.</Description>
+        </Action>
+        <Action>
+          <Argument>59</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 8</Description>
+          <arg1>8</arg1>
+          <Arg1Item>*GOLDEN FISH*</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>52</Argument>
+          <Description>get item ARG1, check if can carry: 55</Description>
+          <arg1>55</arg1>
+          <Arg1Item>Dead fish</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="11" Auto="100">
+      <Verb>0</Verb>
+      <Noun>100</Noun>
+      <Comment>MOVE OX</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>7</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>60</Argument>
+          <Description>set ARG1 flag: 7</Description>
+          <arg1>7</arg1>
+        </Action>
+        <Action>
+          <Argument>62</Argument>
+          <Description>item ARG1 is moved to room ARG2: 47 25</Description>
+          <arg1>47</arg1>
+          <arg2>25</arg2>
+          <Arg1Item>*Small statue of a BLUE OX*</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>66</Argument>
+          <Description> output inventory</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="12" Auto="30">
+      <Verb>0</Verb>
+      <Noun>30</Noun>
+      <Comment>GET CHIG</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>42</arg>
+          <Arg1Item>Chiggers</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>21</arg>
+          <Arg1Item>Infected chigger bites</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>20</arg>
+          <Arg1Item>Chigger bites</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>7</arg>
+          <Arg1Item>Evil smelling mud</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>74</Argument>
+          <Description>take item ARG1, no check done to see if can carry: 20</Description>
+          <arg1>20</arg1>
+          <Arg1Item>Chigger bites</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>45</Argument>
+          <Description>A Output message:   I'm bitten by chiggers.  </Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="13" Auto="50">
+      <Verb>0</Verb>
+      <Noun>50</Noun>
+      <Comment>MUD DRAGON</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>27</arg>
+          <Arg1Item>Large sleeping dragon</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>7</arg>
+          <Arg1Item>Evil smelling mud</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>70</Argument>
+          <Description>clear screen</Description>
+        </Action>
+        <Action>
+          <Argument>4</Argument>
+          <Description>A Output message: Dragon smells something. Awakens &amp; attacks me!</Description>
+        </Action>
+        <Action>
+          <Argument>61</Argument>
+          <Description>Death, clear dark flag, move to last room</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="14" Auto="100">
+      <Verb>0</Verb>
+      <Noun>100</Noun>
+      <Comment>BLAST WALL</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>12</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>32</arg>
+          <Arg1Item>Bricked up window</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 36</Description>
+          <arg1>36</arg1>
+          <Arg1Item>Loose fire bricks</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>55</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 32</Description>
+          <arg1>32</arg1>
+          <Arg1Item>Bricked up window</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 35</Description>
+          <arg1>35</arg1>
+          <Arg1Item>Bricked up window with a hole in it</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="15" Auto="100">
+      <Verb>0</Verb>
+      <Noun>100</Noun>
+      <Comment>BLAS DRAGON</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>12</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>27</arg>
+          <Arg1Item>Large sleeping dragon</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 52</Description>
+          <arg1>52</arg1>
+          <Arg1Item>Smoking hole. pieces of dragon and gore.</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>55</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 27</Description>
+          <arg1>27</arg1>
+          <Arg1Item>Large sleeping dragon</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="16" Auto="100">
+      <Verb>0</Verb>
+      <Noun>100</Noun>
+      <Comment>1ST MIRROR CLUE</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>1</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>8</ConditionID>
+          <Description>bitflag arg is false</Description>
+          <arg>2</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>42</Argument>
+          <Description>A Output message: ` DRAGON STING ` and fades. I don't get it, I hope you do.</Description>
+        </Action>
+        <Action>
+          <Argument>60</Argument>
+          <Description>set ARG1 flag: 1</Description>
+          <arg1>1</arg1>
+        </Action>
+        <Action>
+          <Argument>58</Argument>
+          <Description>set ARG1 flag: 2</Description>
+          <arg1>2</arg1>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="17" Auto="100">
+      <Verb>0</Verb>
+      <Noun>100</Noun>
+      <Comment>BEAR MAD</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>14</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>74</Argument>
+          <Description>take item ARG1, no check done to see if can carry: 13</Description>
+          <arg1>13</arg1>
+          <Arg1Item>Empty bottle</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>60</Argument>
+          <Description>set ARG1 flag: 14</Description>
+          <arg1>14</arg1>
+        </Action>
+        <Action>
+          <Argument>61</Argument>
+          <Description>Death, clear dark flag, move to last room</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="18" Auto="100">
+      <Verb>0</Verb>
+      <Noun>100</Noun>
+      <Comment>RESET BLAST</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>12</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>64</Argument>
+          <Description>look</Description>
+        </Action>
+        <Action>
+          <Argument>60</Argument>
+          <Description>set ARG1 flag: 12</Description>
+          <arg1>12</arg1>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="19" Auto="100">
+      <Verb>0</Verb>
+      <Noun>100</Noun>
+      <Comment>INTRO</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>8</ConditionID>
+          <Description>bitflag arg is false</Description>
+          <arg>13</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>58</Argument>
+          <Description>set ARG1 flag: 13</Description>
+          <arg1>13</arg1>
+        </Action>
+        <Action>
+          <Argument>115</Argument>
+          <Description>A Output message:   Welcome to Adventure number: 1 `ADVENTURELAND`.  In this Adventure you're to find *TREASURES* &amp; store them away.    To see how well you're doing say: `SCORE`</Description>
+        </Action>
+        <Action>
+          <Argument>107</Argument>
+          <Description>A Output message: Remember you can always say `HELP`</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="20" Auto="100">
+      <Verb>0</Verb>
+      <Noun>100</Noun>
+      <Comment>2ND MIRROR CLUE</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>1</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>2</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>27</Argument>
+          <Description>A Output message: `Don't waste honey, get mad instead! Dam lava!?`</Description>
+        </Action>
+        <Action>
+          <Argument>60</Argument>
+          <Description>set ARG1 flag: 1</Description>
+          <arg1>1</arg1>
+        </Action>
+        <Action>
+          <Argument>60</Argument>
+          <Description>set ARG1 flag: 2</Description>
+          <arg1>2</arg1>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="21" Auto="100">
+      <Verb>0</Verb>
+      <Noun>100</Noun>
+      <Comment>DEAD LAMP</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>16</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>60</Argument>
+          <Description>set ARG1 flag: 16</Description>
+          <arg1>16</arg1>
+        </Action>
+        <Action>
+          <Argument>72</Argument>
+          <Description>swap item locations ARG1 ARG2: 60 9</Description>
+          <arg1>60</arg1>
+          <arg2>9</arg2>
+          <Arg1Item>Empty lamp</Arg1Item>
+          <Arg2Item>Lit brass lamp</Arg2Item>
+        </Action>
+        <Action>
+          <Argument>76</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="22" Auto="100">
+      <Verb>0</Verb>
+      <Noun>100</Noun>
+      <Comment>MUDDY RUG</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>26</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>29</arg>
+          <Arg1Item>*Thick PERSIAN RUG*</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>72</Argument>
+          <Description>swap item locations ARG1 ARG2: 29 61</Description>
+          <arg1>29</arg1>
+          <arg2>61</arg2>
+          <Arg1Item>*Thick PERSIAN RUG*</Arg1Item>
+          <Arg2Item>Muddy worthless old rug</Arg2Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="23" Input="LOO LAV">
+      <Verb>29</Verb>
+      <Noun>54</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>34</arg>
+          <Arg1Item>Stream of lava</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>46</Argument>
+          <Description>A Output message: There's something there all right! Maybe I should go there?</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="24" Input="LOO TRE">
+      <Verb>29</Verb>
+      <Noun>57</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>4</arg>
+          <Arg1Item>-HOLLOW- stump and remains of a felled tree</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>46</Argument>
+          <Description>A Output message: There's something there all right! Maybe I should go there?</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="25" Input="GET MUD">
+      <Verb>10</Verb>
+      <Noun>21</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>7</arg>
+          <Arg1Item>Evil smelling mud</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>21</arg>
+          <Arg1Item>Infected chigger bites</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>59</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 21</Description>
+          <arg1>21</arg1>
+          <Arg1Item>Infected chigger bites</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>52</Argument>
+          <Description>get item ARG1, check if can carry: 7</Description>
+          <arg1>7</arg1>
+          <Arg1Item>Evil smelling mud</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+        <Action>
+          <Argument>3</Argument>
+          <Description>A Output message: BOY that really hit the spot!</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="26" Input="GET HON">
+      <Verb>10</Verb>
+      <Noun>42</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>23</arg>
+          <Arg1Item>*ROYAL HONEY*</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>7</arg>
+          <Arg1Item>Evil smelling mud</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>24</arg>
+          <Arg1Item>Large african bees</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>15</Argument>
+          <Description>A Output message: Bees sting me</Description>
+        </Action>
+        <Action>
+          <Argument>61</Argument>
+          <Description>Death, clear dark flag, move to last room</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="27" Input="GET MUD">
+      <Verb>10</Verb>
+      <Noun>21</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>7</arg>
+          <Arg1Item>Evil smelling mud</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>20</arg>
+          <Arg1Item>Chigger bites</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>59</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 20</Description>
+          <arg1>20</arg1>
+          <Arg1Item>Chigger bites</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>52</Argument>
+          <Description>get item ARG1, check if can carry: 7</Description>
+          <arg1>7</arg1>
+          <Arg1Item>Evil smelling mud</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+        <Action>
+          <Argument>3</Argument>
+          <Description>A Output message: BOY that really hit the spot!</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="28" Input="DRO HON">
+      <Verb>18</Verb>
+      <Noun>42</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>23</arg>
+          <Arg1Item>*ROYAL HONEY*</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>25</arg>
+          <Arg1Item>Very thin black bear</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>59</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 23</Description>
+          <arg1>23</arg1>
+          <Arg1Item>*ROYAL HONEY*</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>14</Argument>
+          <Description>A Output message: Bear eats the honey and falls asleep.</Description>
+        </Action>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 39</Description>
+          <arg1>39</arg1>
+          <Arg1Item>Sleeping bear</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>55</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 25</Description>
+          <arg1>25</arg1>
+          <Arg1Item>Very thin black bear</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="29" Input="DRO HON">
+      <Verb>18</Verb>
+      <Noun>42</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>23</arg>
+          <Arg1Item>*ROYAL HONEY*</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 23</Description>
+          <arg1>23</arg1>
+          <Arg1Item>*ROYAL HONEY*</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="30" Input="GET BEE">
+      <Verb>10</Verb>
+      <Noun>23</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>24</arg>
+          <Arg1Item>Large african bees</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>7</arg>
+          <Arg1Item>Evil smelling mud</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>15</Argument>
+          <Description>A Output message: Bees sting me</Description>
+        </Action>
+        <Action>
+          <Argument>61</Argument>
+          <Description>Death, clear dark flag, move to last room</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="31" Input="GET BEE">
+      <Verb>10</Verb>
+      <Noun>23</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>24</arg>
+          <Arg1Item>Large african bees</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>7</arg>
+          <Arg1Item>Evil smelling mud</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>13</arg>
+          <Arg1Item>Empty bottle</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>16</Argument>
+          <Description>A Output message: First I need an empty container.</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="32" Input="GET BEE">
+      <Verb>10</Verb>
+      <Noun>23</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>24</arg>
+          <Arg1Item>Large african bees</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>7</arg>
+          <Arg1Item>Evil smelling mud</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>13</arg>
+          <Arg1Item>Empty bottle</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>72</Argument>
+          <Description>swap item locations ARG1 ARG2: 13 26</Description>
+          <arg1>13</arg1>
+          <arg2>26</arg2>
+          <Arg1Item>Empty bottle</Arg1Item>
+          <Arg2Item>Bees in a bottle</Arg2Item>
+        </Action>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="33" Input="GET INV">
+      <Verb>10</Verb>
+      <Noun>33</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>66</Argument>
+          <Description> output inventory</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="34" Input="CRO LAV">
+      <Verb>56</Verb>
+      <Noun>54</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>18</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>51</Argument>
+          <Description>A Output message: No, its too hot.</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="35" Input="INV ANY">
+      <Verb>34</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>66</Argument>
+          <Description> output inventory</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="36" Input="SAY AWA">
+      <Verb>48</Verb>
+      <Noun>9</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>29</arg>
+          <Arg1Item>*Thick PERSIAN RUG*</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>17</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>54</Argument>
+          <Description>move room ARG1: 23</Description>
+          <arg1>23</arg1>
+        </Action>
+        <Action>
+          <Argument>18</Argument>
+          <Description>A Output message: Something I'm holding vibrates and...</Description>
+        </Action>
+        <Action>
+          <Argument>57</Argument>
+          <Description>clear darkness flag</Description>
+        </Action>
+        <Action>
+          <Argument>64</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="37" Input="LIG ANY">
+      <Verb>14</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>28</arg>
+          <Arg1Item>Flint &amp; steel</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>19</Argument>
+          <Description>A Output message: nothing to light it with</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="38" Input="LIG GAS">
+      <Verb>14</Verb>
+      <Noun>25</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>31</arg>
+          <Arg1Item>Distended gas bladder</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>28</arg>
+          <Arg1Item>Flint &amp; steel</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>20</Argument>
+          <Description>A Output message: Gas bladder blew up</Description>
+        </Action>
+        <Action>
+          <Argument>21</Argument>
+          <Description>A Output message: in my hands!</Description>
+        </Action>
+        <Action>
+          <Argument>61</Argument>
+          <Description>Death, clear dark flag, move to last room</Description>
+        </Action>
+        <Action>
+          <Argument>59</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 31</Description>
+          <arg1>31</arg1>
+          <Arg1Item>Distended gas bladder</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="39" Input="MAK HOL">
+      <Verb>58</Verb>
+      <Noun>16</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>26</arg>
+          <Arg1Item>Bees in a bottle</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>58</Argument>
+          <Description>set ARG1 flag: 17</Description>
+          <arg1>17</arg1>
+        </Action>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="40" Input="LIG GAS">
+      <Verb>14</Verb>
+      <Noun>25</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>31</arg>
+          <Arg1Item>Distended gas bladder</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>28</arg>
+          <Arg1Item>Flint &amp; steel</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>70</Argument>
+          <Description>clear screen</Description>
+        </Action>
+        <Action>
+          <Argument>55</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 31</Description>
+          <arg1>31</arg1>
+          <Arg1Item>Distended gas bladder</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>58</Argument>
+          <Description>set ARG1 flag: 12</Description>
+          <arg1>12</arg1>
+        </Action>
+        <Action>
+          <Argument>20</Argument>
+          <Description>A Output message: Gas bladder blew up</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="41" Input="GO LED">
+      <Verb>1</Verb>
+      <Noun>34</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>20</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>35</arg>
+          <Arg1Item>Bricked up window with a hole in it</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>54</Argument>
+          <Description>move room ARG1: 19</Description>
+          <arg1>19</arg1>
+        </Action>
+        <Action>
+          <Argument>70</Argument>
+          <Description>clear screen</Description>
+        </Action>
+        <Action>
+          <Argument>64</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="42" Input="GET GAS">
+      <Verb>10</Verb>
+      <Noun>25</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>1</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>40</arg>
+          <Arg1Item>Empty wine bladder</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>16</Argument>
+          <Description>A Output message: First I need an empty container.</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="43" Input="GET GAS">
+      <Verb>10</Verb>
+      <Noun>25</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>1</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>40</arg>
+          <Arg1Item>Empty wine bladder</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>72</Argument>
+          <Description>swap item locations ARG1 ARG2: 40 31</Description>
+          <arg1>40</arg1>
+          <arg2>31</arg2>
+          <Arg1Item>Empty wine bladder</Arg1Item>
+          <Arg2Item>Distended gas bladder</Arg2Item>
+        </Action>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="44" Input="DRO GAS">
+      <Verb>18</Verb>
+      <Noun>25</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>31</arg>
+          <Arg1Item>Distended gas bladder</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>72</Argument>
+          <Description>swap item locations ARG1 ARG2: 31 40</Description>
+          <arg1>31</arg1>
+          <arg2>40</arg2>
+          <Arg1Item>Distended gas bladder</Arg1Item>
+          <Arg2Item>Empty wine bladder</Arg2Item>
+        </Action>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+        <Action>
+          <Argument>23</Argument>
+          <Description>A Output message: Gas dissipates. (I think you blew it)</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="45" Input="LIG GAS">
+      <Verb>14</Verb>
+      <Noun>25</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>18</arg>
+          <Arg1Item>Swamp gas</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>28</arg>
+          <Arg1Item>Flint &amp; steel</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>22</Argument>
+          <Description>A Output message: gas needs to be contained before it will burn</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="46" Input="FIN SWA">
+      <Verb>45</Verb>
+      <Noun>53</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>114</Argument>
+          <Description>A Output message: I don't know where it is</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="47" Input="GO THR">
+      <Verb>1</Verb>
+      <Noun>35</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>19</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>25</Argument>
+          <Description>A Output message: How?</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="48" Input="GET MIR">
+      <Verb>10</Verb>
+      <Noun>10</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>38</arg>
+          <Arg1Item>*MAGIC MIRROR*</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>4</ConditionID>
+          <Description>item arg not in room with player</Description>
+          <arg>25</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>52</Argument>
+          <Description>get item ARG1, check if can carry: 38</Description>
+          <arg1>38</arg1>
+          <Arg1Item>*MAGIC MIRROR*</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="49" Input="DRO MIR">
+      <Verb>18</Verb>
+      <Noun>10</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>38</arg>
+          <Arg1Item>*MAGIC MIRROR*</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>29</arg>
+          <Arg1Item>*Thick PERSIAN RUG*</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 38</Description>
+          <arg1>38</arg1>
+          <Arg1Item>*MAGIC MIRROR*</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>36</Argument>
+          <Description>A Output message: Mirror lands softly on rug, lights up and says:</Description>
+        </Action>
+        <Action>
+          <Argument>58</Argument>
+          <Description>set ARG1 flag: 1</Description>
+          <arg1>1</arg1>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="50" Input="DRI FRU">
+      <Verb>42</Verb>
+      <Noun>43</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>46</arg>
+          <Arg1Item>*JEWELED FRUIT*</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>3</Argument>
+          <Description>A Output message: BOY that really hit the spot!</Description>
+        </Action>
+        <Action>
+          <Argument>59</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 46</Description>
+          <arg1>46</arg1>
+          <Arg1Item>*JEWELED FRUIT*</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="51" Input="GET WAT">
+      <Verb>10</Verb>
+      <Noun>13</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>6</arg>
+          <Arg1Item>Water</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>13</arg>
+          <Arg1Item>Empty bottle</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>59</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 13</Description>
+          <arg1>13</arg1>
+          <Arg1Item>Empty bottle</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>52</Argument>
+          <Description>get item ARG1, check if can carry: 12</Description>
+          <arg1>12</arg1>
+          <Arg1Item>Water in bottle</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="52" Input="JUM ANY">
+      <Verb>6</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>19</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>36</arg>
+          <Arg1Item>Loose fire bricks</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>54</Argument>
+          <Description>move room ARG1: 21</Description>
+          <arg1>21</arg1>
+        </Action>
+        <Action>
+          <Argument>64</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="53" Input="JUM ANY">
+      <Verb>6</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>21</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>54</Argument>
+          <Description>move room ARG1: 19</Description>
+          <arg1>19</arg1>
+        </Action>
+        <Action>
+          <Argument>64</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="54" Input="GO THR">
+      <Verb>1</Verb>
+      <Noun>35</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>21</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>25</arg>
+          <Arg1Item>Very thin black bear</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>26</Argument>
+          <Description>A Output message: Bear won't let me</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="55" Input="GO THR">
+      <Verb>1</Verb>
+      <Noun>35</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>21</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>4</ConditionID>
+          <Description>item arg not in room with player</Description>
+          <arg>25</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>54</Argument>
+          <Description>move room ARG1: 22</Description>
+          <arg1>22</arg1>
+        </Action>
+        <Action>
+          <Argument>70</Argument>
+          <Description>clear screen</Description>
+        </Action>
+        <Action>
+          <Argument>64</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="56" Input="MAK LAV">
+      <Verb>58</Verb>
+      <Noun>54</Noun>
+      <Comment>BUILD DAM</Comment>
+      <Conditions>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>36</arg>
+          <Arg1Item>Loose fire bricks</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>34</arg>
+          <Arg1Item>Stream of lava</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>72</Argument>
+          <Description>swap item locations ARG1 ARG2: 0 34</Description>
+          <arg2>34</arg2>
+          <Arg1Item>Glowing *FIRESTONE*</Arg1Item>
+          <Arg2Item>Stream of lava</Arg2Item>
+        </Action>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 45</Description>
+          <arg1>45</arg1>
+          <Arg1Item>Lava stream with brick dam</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>76</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="57" Input="GO LAV">
+      <Verb>1</Verb>
+      <Noun>54</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>18</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>51</Argument>
+          <Description>A Output message: No, its too hot.</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="58" Input="DRO BEE">
+      <Verb>18</Verb>
+      <Noun>23</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>26</arg>
+          <Arg1Item>Bees in a bottle</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>25</arg>
+          <Arg1Item>Very thin black bear</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>28</Argument>
+          <Description>A Output message: Bees madden bear, bear then attacks me!</Description>
+        </Action>
+        <Action>
+          <Argument>59</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 26</Description>
+          <arg1>26</arg1>
+          <Arg1Item>Bees in a bottle</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 24</Description>
+          <arg1>24</arg1>
+          <Arg1Item>Large african bees</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>58</Argument>
+          <Description>set ARG1 flag: 14</Description>
+          <arg1>14</arg1>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="59" Input="GET WAT">
+      <Verb>10</Verb>
+      <Noun>13</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>6</arg>
+          <Arg1Item>Water</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>13</arg>
+          <Arg1Item>Empty bottle</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>16</Argument>
+          <Description>A Output message: First I need an empty container.</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="60" Input="REA WEB">
+      <Verb>38</Verb>
+      <Noun>51</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>3</arg>
+          <Arg1Item>Spider web with writing on it</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>2</Argument>
+          <Description>A Output message: Chop 'er down!</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="61" Input="GO TRE">
+      <Verb>1</Verb>
+      <Noun>57</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>5</arg>
+          <Arg1Item>Cypress tree</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>54</Argument>
+          <Description>move room ARG1: 2</Description>
+          <arg1>2</arg1>
+        </Action>
+        <Action>
+          <Argument>70</Argument>
+          <Description>clear screen</Description>
+        </Action>
+        <Action>
+          <Argument>64</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="62" Input="DRO WAT">
+      <Verb>18</Verb>
+      <Noun>13</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>12</arg>
+          <Arg1Item>Water in bottle</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>6</ConditionID>
+          <Description>player not it room arg</Description>
+          <arg>18</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>72</Argument>
+          <Description>swap item locations ARG1 ARG2: 12 13</Description>
+          <arg1>12</arg1>
+          <arg2>13</arg2>
+          <Arg1Item>Water in bottle</Arg1Item>
+          <Arg2Item>Empty bottle</Arg2Item>
+        </Action>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+        <Action>
+          <Argument>29</Argument>
+          <Description>A Output message: It soaks into the ground</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="63" Input="FIL LAM">
+      <Verb>55</Verb>
+      <Noun>17</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>22</arg>
+          <Arg1Item>Patches of `OILY` slime</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>60</arg>
+          <Arg1Item>Empty lamp</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>59</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 22</Description>
+          <arg1>22</arg1>
+          <Arg1Item>Patches of `OILY` slime</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>59</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 60</Description>
+          <arg1>60</arg1>
+          <Arg1Item>Empty lamp</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>44</Argument>
+          <Description>A Output message: Lamp is now full &amp; lit</Description>
+        </Action>
+        <Action>
+          <Argument>69</Argument>
+          <Description>refill lamp</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="64" Input="CHO TRE">
+      <Verb>8</Verb>
+      <Noun>57</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>5</arg>
+          <Arg1Item>Cypress tree</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>11</ConditionID>
+          <Description>item arg not carried or in room with player</Description>
+          <arg>14</arg>
+          <Arg1Item>Ring of skeleton keys</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>11</arg>
+          <Arg1Item>Rusty axe (Magic word `BUNYON` on it)</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>55</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 5</Description>
+          <arg1>5</arg1>
+          <Arg1Item>Cypress tree</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 4</Description>
+          <arg1>4</arg1>
+          <Arg1Item>-HOLLOW- stump and remains of a felled tree</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>7</Argument>
+          <Description>A Output message: TIMBER. Something fell from the tree top &amp; vanished in the swamp</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="65" Input="OPE DOO">
+      <Verb>69</Verb>
+      <Noun>20</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>5</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>16</arg>
+          <Arg1Item>Locked door</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>14</arg>
+          <Arg1Item>Ring of skeleton keys</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>6</Argument>
+          <Description>A Output message: I can't its locked</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="66" Input="UNL DOO">
+      <Verb>37</Verb>
+      <Noun>20</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>5</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>16</arg>
+          <Arg1Item>Locked door</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>14</arg>
+          <Arg1Item>Ring of skeleton keys</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>6</Argument>
+          <Description>A Output message: I can't its locked</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="67" Input="THR AXE">
+      <Verb>24</Verb>
+      <Noun>11</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>11</arg>
+          <Arg1Item>Rusty axe (Magic word `BUNYON` on it)</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>30</Argument>
+          <Description>A Output message: In 2 words tell me at what...like: AT TREE</Description>
+        </Action>
+        <Action>
+          <Argument>58</Argument>
+          <Description>set ARG1 flag: 3</Description>
+          <arg1>3</arg1>
+        </Action>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 11</Description>
+          <arg1>11</arg1>
+          <Arg1Item>Rusty axe (Magic word `BUNYON` on it)</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="68" Input="OPE DOO">
+      <Verb>69</Verb>
+      <Noun>20</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>16</arg>
+          <Arg1Item>Locked door</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>14</arg>
+          <Arg1Item>Ring of skeleton keys</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>55</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 16</Description>
+          <arg1>16</arg1>
+          <Arg1Item>Locked door</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 17</Description>
+          <arg1>17</arg1>
+          <Arg1Item>Open door with a hallway beyond</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>76</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="69" Input="CRO ANY">
+      <Verb>56</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>25</Argument>
+          <Description>A Output message: How?</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="70" Input="JUM ANY">
+      <Verb>6</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>19</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>36</arg>
+          <Arg1Item>Loose fire bricks</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>33</Argument>
+          <Description>A Output message: Somethings too heavy. I fall.</Description>
+        </Action>
+        <Action>
+          <Argument>61</Argument>
+          <Description>Death, clear dark flag, move to last room</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="71" Input="DAM LAV">
+      <Verb>57</Verb>
+      <Noun>54</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>36</arg>
+          <Arg1Item>Loose fire bricks</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>34</arg>
+          <Arg1Item>Stream of lava</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>72</Argument>
+          <Description>swap item locations ARG1 ARG2: 0 34</Description>
+          <arg2>34</arg2>
+          <Arg1Item>Glowing *FIRESTONE*</Arg1Item>
+          <Arg2Item>Stream of lava</Arg2Item>
+        </Action>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 45</Description>
+          <arg1>45</arg1>
+          <Arg1Item>Lava stream with brick dam</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>76</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="72" Input="GET BRI">
+      <Verb>10</Verb>
+      <Noun>37</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>36</arg>
+          <Arg1Item>Loose fire bricks</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>52</Argument>
+          <Description>get item ARG1, check if can carry: 36</Description>
+          <arg1>36</arg1>
+          <Arg1Item>Loose fire bricks</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+        <Action>
+          <Argument>32</Argument>
+          <Description>A Output message: Its heavy!</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="73" Input="STO ANY">
+      <Verb>32</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>34</Argument>
+          <Description>A Output message: To stop game say QUIT</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="74" Input="QUI ANY">
+      <Verb>26</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>65</Argument>
+          <Description>score</Description>
+        </Action>
+        <Action>
+          <Argument>63</Argument>
+          <Description>game over</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="75" Input="GET MIR">
+      <Verb>10</Verb>
+      <Noun>10</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>38</arg>
+          <Arg1Item>*MAGIC MIRROR*</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>25</arg>
+          <Arg1Item>Very thin black bear</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>26</Argument>
+          <Description>A Output message: Bear won't let me</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="76" Input="DRO MIR">
+      <Verb>18</Verb>
+      <Noun>10</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>38</arg>
+          <Arg1Item>*MAGIC MIRROR*</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>4</ConditionID>
+          <Description>item arg not in room with player</Description>
+          <arg>29</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>35</Argument>
+          <Description>A Output message: Mirror hits floor and shatters into a MILLION pieces</Description>
+        </Action>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 41</Description>
+          <arg1>41</arg1>
+          <Arg1Item>Broken glass</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>59</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 38</Description>
+          <arg1>38</arg1>
+          <Arg1Item>*MAGIC MIRROR*</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="77" Input="AT BEA">
+      <Verb>7</Verb>
+      <Noun>38</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>3</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>4</ConditionID>
+          <Description>item arg not in room with player</Description>
+          <arg>38</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>122</Argument>
+          <Description>A Output message: OK, I threw it.</Description>
+        </Action>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>111</Argument>
+          <Description>A Output message: please leave it alone</Description>
+        </Action>
+        <Action>
+          <Argument>60</Argument>
+          <Description>set ARG1 flag: 3</Description>
+          <arg1>3</arg1>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="78" Input="AT DRA">
+      <Verb>7</Verb>
+      <Noun>39</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>3</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>27</arg>
+          <Arg1Item>Large sleeping dragon</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>122</Argument>
+          <Description>A Output message: OK, I threw it.</Description>
+        </Action>
+        <Action>
+          <Argument>39</Argument>
+          <Description>A Output message: It doesn't seem to bother him at all!</Description>
+        </Action>
+        <Action>
+          <Argument>60</Argument>
+          <Description>set ARG1 flag: 3</Description>
+          <arg1>3</arg1>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="79" Input="SCO ANY">
+      <Verb>33</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>65</Argument>
+          <Description>score</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="80" Input="HEL ANY">
+      <Verb>47</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>20</arg>
+          <Arg1Item>Chigger bites</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>70</Argument>
+          <Description>clear screen</Description>
+        </Action>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>113</Argument>
+          <Description>A Output message: Medicine is good for bites.</Description>
+        </Action>
+        <Action>
+          <Argument>105</Argument>
+          <Description>A Output message: Try --&gt; `LOOK, JUMP, SWIM, CLIMB, FIND, TAKE, SCORE, DROP`  and any other verbs you can think of...</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="81" Input="HEL ANY">
+      <Verb>47</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>21</arg>
+          <Arg1Item>Infected chigger bites</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>70</Argument>
+          <Description>clear screen</Description>
+        </Action>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>113</Argument>
+          <Description>A Output message: Medicine is good for bites.</Description>
+        </Action>
+        <Action>
+          <Argument>105</Argument>
+          <Description>A Output message: Try --&gt; `LOOK, JUMP, SWIM, CLIMB, FIND, TAKE, SCORE, DROP`  and any other verbs you can think of...</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="82" Input="GO LED">
+      <Verb>1</Verb>
+      <Noun>34</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>18</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>102</Argument>
+          <Description>A Output message: Not here.</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="83" Input="GET LAV">
+      <Verb>10</Verb>
+      <Noun>54</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>34</arg>
+          <Arg1Item>Stream of lava</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>51</Argument>
+          <Description>A Output message: No, its too hot.</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="84" Input="SCR ANY">
+      <Verb>51</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>25</arg>
+          <Arg1Item>Very thin black bear</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>41</Argument>
+          <Description>A Output message: Bear is so startled that he FELL off the ledge!</Description>
+        </Action>
+        <Action>
+          <Argument>62</Argument>
+          <Description>item ARG1 is moved to room ARG2: 43 18</Description>
+          <arg1>43</arg1>
+          <arg2>18</arg2>
+          <Arg1Item>Slightly woozy bear</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>55</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 25</Description>
+          <arg1>25</arg1>
+          <Arg1Item>Very thin black bear</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="85" Input="DRO BEE">
+      <Verb>18</Verb>
+      <Noun>23</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>26</arg>
+          <Arg1Item>Bees in a bottle</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>27</arg>
+          <Arg1Item>Large sleeping dragon</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 24</Description>
+          <arg1>24</arg1>
+          <Arg1Item>Large african bees</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 44</Description>
+          <arg1>44</arg1>
+          <Arg1Item>*DRAGON EGGS* (very rare)</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>55</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 27</Description>
+          <arg1>27</arg1>
+          <Arg1Item>Large sleeping dragon</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>43</Argument>
+          <Description>A Output message: The bees attack the dragon which gets so annoyed it gets up  and flys away...</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="86" Input="AT WIN">
+      <Verb>7</Verb>
+      <Noun>19</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>3</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>60</Argument>
+          <Description>set ARG1 flag: 3</Description>
+          <arg1>3</arg1>
+        </Action>
+        <Action>
+          <Argument>1</Argument>
+          <Description>A Output message: Nothing happens</Description>
+        </Action>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>107</Argument>
+          <Description>A Output message: Remember you can always say `HELP`</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="87" Input="OPE DOO">
+      <Verb>69</Verb>
+      <Noun>20</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>17</arg>
+          <Arg1Item>Open door with a hallway beyond</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>64</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="88" Input="GO HOL">
+      <Verb>1</Verb>
+      <Noun>16</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>35</arg>
+          <Arg1Item>Bricked up window with a hole in it</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>70</Argument>
+          <Description>clear screen</Description>
+        </Action>
+        <Action>
+          <Argument>54</Argument>
+          <Description>move room ARG1: 19</Description>
+          <arg1>19</arg1>
+        </Action>
+        <Action>
+          <Argument>64</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="89" Input="AT BEA">
+      <Verb>7</Verb>
+      <Noun>38</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>3</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>38</arg>
+          <Arg1Item>*MAGIC MIRROR*</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>55</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 38</Description>
+          <arg1>38</arg1>
+          <Arg1Item>*MAGIC MIRROR*</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>58</Argument>
+          <Description>set ARG1 flag: 5</Description>
+          <arg1>5</arg1>
+        </Action>
+        <Action>
+          <Argument>31</Argument>
+          <Description>A Output message: OH NO... Bear dodges... CRASH!</Description>
+        </Action>
+        <Action>
+          <Argument>60</Argument>
+          <Description>set ARG1 flag: 4</Description>
+          <arg1>4</arg1>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="90" Input="FIN AXE">
+      <Verb>45</Verb>
+      <Noun>11</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>114</Argument>
+          <Description>A Output message: I don't know where it is</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="91" Input="WAK ANY">
+      <Verb>36</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>1</Argument>
+          <Description>A Output message: Nothing happens</Description>
+        </Action>
+        <Action>
+          <Argument>47</Argument>
+          <Description>A Output message: Maybe if I threw something?...</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="92" Input="GO TRE">
+      <Verb>1</Verb>
+      <Noun>57</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>4</arg>
+          <Arg1Item>-HOLLOW- stump and remains of a felled tree</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>54</Argument>
+          <Description>move room ARG1: 3</Description>
+          <arg1>3</arg1>
+        </Action>
+        <Action>
+          <Argument>70</Argument>
+          <Description>clear screen</Description>
+        </Action>
+        <Action>
+          <Argument>64</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="93" Input="CHO TRE">
+      <Verb>8</Verb>
+      <Noun>57</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>5</arg>
+          <Arg1Item>Cypress tree</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>11</arg>
+          <Arg1Item>Rusty axe (Magic word `BUNYON` on it)</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>14</arg>
+          <Arg1Item>Ring of skeleton keys</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>55</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 5</Description>
+          <arg1>5</arg1>
+          <Arg1Item>Cypress tree</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 4</Description>
+          <arg1>4</arg1>
+          <Arg1Item>-HOLLOW- stump and remains of a felled tree</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>8</Argument>
+          <Description>A Output message: TIMBER!</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="94" Input="ATT BEA">
+      <Verb>39</Verb>
+      <Noun>38</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>25</arg>
+          <Arg1Item>Very thin black bear</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>26</Argument>
+          <Description>A Output message: Bear won't let me</Description>
+        </Action>
+        <Action>
+          <Argument>47</Argument>
+          <Description>A Output message: Maybe if I threw something?...</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="95" Input="ATT DRA">
+      <Verb>39</Verb>
+      <Noun>39</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>27</arg>
+          <Arg1Item>Large sleeping dragon</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>39</Argument>
+          <Description>A Output message: It doesn't seem to bother him at all!</Description>
+        </Action>
+        <Action>
+          <Argument>47</Argument>
+          <Description>A Output message: Maybe if I threw something?...</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="96" Input="DRI WAT">
+      <Verb>42</Verb>
+      <Noun>13</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>12</arg>
+          <Arg1Item>Water in bottle</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>3</Argument>
+          <Description>A Output message: BOY that really hit the spot!</Description>
+        </Action>
+        <Action>
+          <Argument>59</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 12</Description>
+          <arg1>12</arg1>
+          <Arg1Item>Water in bottle</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>52</Argument>
+          <Description>get item ARG1, check if can carry: 13</Description>
+          <arg1>13</arg1>
+          <Arg1Item>Empty bottle</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="97" Input="DRI WAT">
+      <Verb>42</Verb>
+      <Noun>13</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>6</arg>
+          <Arg1Item>Water</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>3</Argument>
+          <Description>A Output message: BOY that really hit the spot!</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="98" Input="DRI HON">
+      <Verb>42</Verb>
+      <Noun>42</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>23</arg>
+          <Arg1Item>*ROYAL HONEY*</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>3</Argument>
+          <Description>A Output message: BOY that really hit the spot!</Description>
+        </Action>
+        <Action>
+          <Argument>59</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 23</Description>
+          <arg1>23</arg1>
+          <Arg1Item>*ROYAL HONEY*</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="99" Input="AT DOO">
+      <Verb>7</Verb>
+      <Noun>20</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>16</arg>
+          <Arg1Item>Locked door</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>3</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>55</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 16</Description>
+          <arg1>16</arg1>
+          <Arg1Item>Locked door</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 17</Description>
+          <arg1>17</arg1>
+          <Arg1Item>Open door with a hallway beyond</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>5</Argument>
+          <Description>A Output message: Lock shatters</Description>
+        </Action>
+        <Action>
+          <Argument>60</Argument>
+          <Description>set ARG1 flag: 3</Description>
+          <arg1>3</arg1>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="100" Input="SWI ANY">
+      <Verb>27</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>26</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>9</ConditionID>
+          <Description>something carried</Description>
+          <arg>0</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>33</Argument>
+          <Description>A Output message: Somethings too heavy. I fall.</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="101" Input="SWI ANY">
+      <Verb>27</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>26</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>10</ConditionID>
+          <Description>nothing carried</Description>
+          <arg>0</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>54</Argument>
+          <Description>move room ARG1: 10</Description>
+          <arg1>10</arg1>
+        </Action>
+        <Action>
+          <Argument>70</Argument>
+          <Description>clear screen</Description>
+        </Action>
+        <Action>
+          <Argument>64</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="102" Input="CHO ANY">
+      <Verb>8</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>11</arg>
+          <Arg1Item>Rusty axe (Magic word `BUNYON` on it)</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>38</Argument>
+          <Description>A Output message: I'm not carrying ax, take inventory!</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="103" Input="SAY BUN">
+      <Verb>48</Verb>
+      <Noun>32</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>47</arg>
+          <Arg1Item>*Small statue of a BLUE OX*</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>11</arg>
+          <Arg1Item>Rusty axe (Magic word `BUNYON` on it)</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>85</Argument>
+          <Description>echo noun</Description>
+        </Action>
+        <Action>
+          <Argument>18</Argument>
+          <Description>A Output message: Something I'm holding vibrates and...</Description>
+        </Action>
+        <Action>
+          <Argument>62</Argument>
+          <Description>item ARG1 is moved to room ARG2: 11 25</Description>
+          <arg1>11</arg1>
+          <arg2>25</arg2>
+          <Arg1Item>Rusty axe (Magic word `BUNYON` on it)</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>58</Argument>
+          <Description>set ARG1 flag: 7</Description>
+          <arg1>7</arg1>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="104" Input="SAY BUN">
+      <Verb>48</Verb>
+      <Noun>32</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>11</arg>
+          <Arg1Item>Rusty axe (Magic word `BUNYON` on it)</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>6</ConditionID>
+          <Description>player not it room arg</Description>
+          <arg>26</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>85</Argument>
+          <Description>echo noun</Description>
+        </Action>
+        <Action>
+          <Argument>18</Argument>
+          <Description>A Output message: Something I'm holding vibrates and...</Description>
+        </Action>
+        <Action>
+          <Argument>62</Argument>
+          <Description>item ARG1 is moved to room ARG2: 11 25</Description>
+          <arg1>11</arg1>
+          <arg2>25</arg2>
+          <Arg1Item>Rusty axe (Magic word `BUNYON` on it)</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>66</Argument>
+          <Description> output inventory</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="105" Input="RUB LAM">
+      <Verb>28</Verb>
+      <Noun>17</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>9</arg>
+          <Arg1Item>Lit brass lamp</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>51</Argument>
+          <Description>A Output message: No, its too hot.</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="106" Input="GET MUD">
+      <Verb>10</Verb>
+      <Noun>21</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>7</arg>
+          <Arg1Item>Evil smelling mud</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>52</Argument>
+          <Description>get item ARG1, check if can carry: 7</Description>
+          <arg1>7</arg1>
+          <Arg1Item>Evil smelling mud</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="107" Input="RUB LAM">
+      <Verb>28</Verb>
+      <Noun>17</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>10</arg>
+          <Arg1Item>Old fashioned brass lamp</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>8</ConditionID>
+          <Description>bitflag arg is false</Description>
+          <arg>8</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>49</Argument>
+          <Description>A Output message: A glowing Genie appears, drops somehting, then vanishes.</Description>
+        </Action>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 48</Description>
+          <arg1>48</arg1>
+          <Arg1Item>*DIAMOND RING*</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>58</Argument>
+          <Description>set ARG1 flag: 8</Description>
+          <arg1>8</arg1>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="108" Input="RUB LAM">
+      <Verb>28</Verb>
+      <Noun>17</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>10</arg>
+          <Arg1Item>Old fashioned brass lamp</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>11</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>1</Argument>
+          <Description>A Output message: Nothing happens</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="109" Input="RUB LAM">
+      <Verb>28</Verb>
+      <Noun>17</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>10</arg>
+          <Arg1Item>Old fashioned brass lamp</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>10</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>50</Argument>
+          <Description>A Output message: A glowing Genie appears, says `Boy you're selfish`, takes  something and then makes `ME` vanish!</Description>
+        </Action>
+        <Action>
+          <Argument>58</Argument>
+          <Description>set ARG1 flag: 11</Description>
+          <arg1>11</arg1>
+        </Action>
+        <Action>
+          <Argument>61</Argument>
+          <Description>Death, clear dark flag, move to last room</Description>
+        </Action>
+        <Action>
+          <Argument>59</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 48</Description>
+          <arg1>48</arg1>
+          <Arg1Item>*DIAMOND RING*</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="110" Input="RUB LAM">
+      <Verb>28</Verb>
+      <Noun>17</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>10</arg>
+          <Arg1Item>Old fashioned brass lamp</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>9</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>50</Argument>
+          <Description>A Output message: A glowing Genie appears, says `Boy you're selfish`, takes  something and then makes `ME` vanish!</Description>
+        </Action>
+        <Action>
+          <Argument>58</Argument>
+          <Description>set ARG1 flag: 10</Description>
+          <arg1>10</arg1>
+        </Action>
+        <Action>
+          <Argument>61</Argument>
+          <Description>Death, clear dark flag, move to last room</Description>
+        </Action>
+        <Action>
+          <Argument>59</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 49</Description>
+          <arg1>49</arg1>
+          <Arg1Item>*DIAMOND BRACELET*</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="111" Input="RUB LAM">
+      <Verb>28</Verb>
+      <Noun>17</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>10</arg>
+          <Arg1Item>Old fashioned brass lamp</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>8</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>49</Argument>
+          <Description>A Output message: A glowing Genie appears, drops somehting, then vanishes.</Description>
+        </Action>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 49</Description>
+          <arg1>49</arg1>
+          <Arg1Item>*DIAMOND BRACELET*</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>58</Argument>
+          <Description>set ARG1 flag: 9</Description>
+          <arg1>9</arg1>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="112" Input="SCR ANY">
+      <Verb>51</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>20</arg>
+          <Arg1Item>Chigger bites</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>3</Argument>
+          <Description>A Output message: BOY that really hit the spot!</Description>
+        </Action>
+        <Action>
+          <Argument>12</Argument>
+          <Description>A Output message:   My chigger bites are now INFECTED!  </Description>
+        </Action>
+        <Action>
+          <Argument>72</Argument>
+          <Description>swap item locations ARG1 ARG2: 20 21</Description>
+          <arg1>20</arg1>
+          <arg2>21</arg2>
+          <Arg1Item>Chigger bites</Arg1Item>
+          <Arg2Item>Infected chigger bites</Arg2Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="113" Input="SCR ANY">
+      <Verb>51</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>21</arg>
+          <Arg1Item>Infected chigger bites</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>3</Argument>
+          <Description>A Output message: BOY that really hit the spot!</Description>
+        </Action>
+        <Action>
+          <Argument>13</Argument>
+          <Description>A Output message: My bites have rotted my whole body!</Description>
+        </Action>
+        <Action>
+          <Argument>61</Argument>
+          <Description>Death, clear dark flag, move to last room</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="114" Input="SWI ANY">
+      <Verb>27</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>6</ConditionID>
+          <Description>player not it room arg</Description>
+          <arg>26</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>102</Argument>
+          <Description>A Output message: Not here.</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="115" Input="WAV ANY">
+      <Verb>60</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>1</Argument>
+          <Description>A Output message: Nothing happens</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="116" Input="SAY BUN">
+      <Verb>48</Verb>
+      <Noun>32</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>11</arg>
+          <Arg1Item>Rusty axe (Magic word `BUNYON` on it)</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+        <Action>
+          <Argument>85</Argument>
+          <Description>echo noun</Description>
+        </Action>
+        <Action>
+          <Argument>124</Argument>
+          <Description>A Output message: The ax vibrated!</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="117" Input="LIG LAM">
+      <Verb>14</Verb>
+      <Noun>17</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>9</arg>
+          <Arg1Item>Lit brass lamp</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>10</Argument>
+          <Description>A Output message: Lamp burns with a cold flameless blue glow.</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="118" Input="FIN TRE">
+      <Verb>45</Verb>
+      <Noun>57</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>103</Argument>
+          <Description>A Output message: Try the swamp</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="119" Input="DRO BEE">
+      <Verb>18</Verb>
+      <Noun>23</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>26</arg>
+          <Arg1Item>Bees in a bottle</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 24</Description>
+          <arg1>24</arg1>
+          <Arg1Item>Large african bees</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>72</Argument>
+          <Description>swap item locations ARG1 ARG2: 26 13</Description>
+          <arg1>26</arg1>
+          <arg2>13</arg2>
+          <Arg1Item>Bees in a bottle</Arg1Item>
+          <Arg2Item>Empty bottle</Arg2Item>
+        </Action>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="120" Input="FIN KEY">
+      <Verb>45</Verb>
+      <Noun>30</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>103</Argument>
+          <Description>A Output message: Try the swamp</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="121" Input="FIN MUD">
+      <Verb>45</Verb>
+      <Noun>21</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>103</Argument>
+          <Description>A Output message: Try the swamp</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="122" Input="AT SHO">
+      <Verb>7</Verb>
+      <Noun>60</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>3</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>26</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>60</Argument>
+          <Description>set ARG1 flag: 3</Description>
+          <arg1>3</arg1>
+        </Action>
+        <Action>
+          <Argument>62</Argument>
+          <Description>item ARG1 is moved to room ARG2: 11 10</Description>
+          <arg1>11</arg1>
+          <arg2>10</arg2>
+          <Arg1Item>Rusty axe (Magic word `BUNYON` on it)</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="123" Input="GO TRE">
+      <Verb>1</Verb>
+      <Noun>57</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>11</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>54</Argument>
+          <Description>move room ARG1: 28</Description>
+          <arg1>28</arg1>
+        </Action>
+        <Action>
+          <Argument>70</Argument>
+          <Description>clear screen</Description>
+        </Action>
+        <Action>
+          <Argument>64</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="124" Input="HEL ANY">
+      <Verb>47</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>26</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>105</Argument>
+          <Description>A Output message: Try --&gt; `LOOK, JUMP, SWIM, CLIMB, FIND, TAKE, SCORE, DROP`  and any other verbs you can think of...</Description>
+        </Action>
+        <Action>
+          <Argument>109</Argument>
+          <Description>A Output message: You may need to say magic words here</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="125" Input="HEL ANY">
+      <Verb>47</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>11</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>105</Argument>
+          <Description>A Output message: Try --&gt; `LOOK, JUMP, SWIM, CLIMB, FIND, TAKE, SCORE, DROP`  and any other verbs you can think of...</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="126" Input="HEL ANY">
+      <Verb>47</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>19</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>105</Argument>
+          <Description>A Output message: Try --&gt; `LOOK, JUMP, SWIM, CLIMB, FIND, TAKE, SCORE, DROP`  and any other verbs you can think of...</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="127" Input="HEL ANY">
+      <Verb>47</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>23</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>106</Argument>
+          <Description>A Output message: There are only 3 ways to wake the Dragon!</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="128" Input="HEL ANY">
+      <Verb>47</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>13</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>109</Argument>
+          <Description>A Output message: You may need to say magic words here</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="129" Input="HEL ANY">
+      <Verb>47</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>17</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>109</Argument>
+          <Description>A Output message: You may need to say magic words here</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="130" Input="HEL ANY">
+      <Verb>47</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>15</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>109</Argument>
+          <Description>A Output message: You may need to say magic words here</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="131" Input="HEL ANY">
+      <Verb>47</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>21</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>105</Argument>
+          <Description>A Output message: Try --&gt; `LOOK, JUMP, SWIM, CLIMB, FIND, TAKE, SCORE, DROP`  and any other verbs you can think of...</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="132" Input="HEL ANY">
+      <Verb>47</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>8</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>108</Argument>
+          <Description>A Output message: Read the sign in the meadow!</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="133" Input="UNL DOO">
+      <Verb>37</Verb>
+      <Noun>20</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>14</arg>
+          <Arg1Item>Ring of skeleton keys</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>16</arg>
+          <Arg1Item>Locked door</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>53</Argument>
+          <Description>drops item ARG1 into current room: 17</Description>
+          <arg1>17</arg1>
+          <Arg1Item>Open door with a hallway beyond</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>55</Argument>
+          <Description>Item ARG1 is removed from the game (put in room 0): 16</Description>
+          <arg1>16</arg1>
+          <Arg1Item>Locked door</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="134" Input="GO HAL">
+      <Verb>1</Verb>
+      <Noun>56</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>17</arg>
+          <Arg1Item>Open door with a hallway beyond</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>54</Argument>
+          <Description>move room ARG1: 6</Description>
+          <arg1>6</arg1>
+        </Action>
+        <Action>
+          <Argument>56</Argument>
+          <Description>set darkness flag</Description>
+        </Action>
+        <Action>
+          <Argument>70</Argument>
+          <Description>clear screen</Description>
+        </Action>
+        <Action>
+          <Argument>64</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="135" Input="LIG LAM">
+      <Verb>14</Verb>
+      <Noun>17</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>10</arg>
+          <Arg1Item>Old fashioned brass lamp</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>72</Argument>
+          <Description>swap item locations ARG1 ARG2: 10 9</Description>
+          <arg1>10</arg1>
+          <arg2>9</arg2>
+          <Arg1Item>Old fashioned brass lamp</Arg1Item>
+          <Arg2Item>Lit brass lamp</Arg2Item>
+        </Action>
+        <Action>
+          <Argument>10</Argument>
+          <Description>A Output message: Lamp burns with a cold flameless blue glow.</Description>
+        </Action>
+        <Action>
+          <Argument>76</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="136" Input="UNL LAM">
+      <Verb>37</Verb>
+      <Noun>17</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>9</arg>
+          <Arg1Item>Lit brass lamp</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>72</Argument>
+          <Description>swap item locations ARG1 ARG2: 9 10</Description>
+          <arg1>9</arg1>
+          <arg2>10</arg2>
+          <Arg1Item>Lit brass lamp</Arg1Item>
+          <Arg2Item>Old fashioned brass lamp</Arg2Item>
+        </Action>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+        <Action>
+          <Argument>9</Argument>
+          <Description>A Output message: Lamp is off</Description>
+        </Action>
+        <Action>
+          <Argument>76</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="137" Input="GET WEB">
+      <Verb>10</Verb>
+      <Noun>51</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>3</arg>
+          <Arg1Item>Spider web with writing on it</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>11</Argument>
+          <Description>A Output message: I'm bit by a spider</Description>
+        </Action>
+        <Action>
+          <Argument>61</Argument>
+          <Description>Death, clear dark flag, move to last room</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="138" Input="GO HOL">
+      <Verb>1</Verb>
+      <Noun>16</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>52</arg>
+          <Arg1Item>Smoking hole. pieces of dragon and gore.</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>54</Argument>
+          <Description>move room ARG1: 24</Description>
+          <arg1>24</arg1>
+        </Action>
+        <Action>
+          <Argument>70</Argument>
+          <Description>clear screen</Description>
+        </Action>
+        <Action>
+          <Argument>64</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="139" Input="GET SIG">
+      <Verb>10</Verb>
+      <Noun>49</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>111</Argument>
+          <Description>A Output message: please leave it alone</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="140" Input="LIG ANY">
+      <Verb>14</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>28</arg>
+          <Arg1Item>Flint &amp; steel</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>4</ConditionID>
+          <Description>item arg not in room with player</Description>
+          <arg>18</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>24</Argument>
+          <Description>A Output message: That won't ignite</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="141" Input="SCR ANY">
+      <Verb>51</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>1</Argument>
+          <Description>A Output message: Nothing happens</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="142" Input="SAY AWA">
+      <Verb>48</Verb>
+      <Noun>9</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>29</arg>
+          <Arg1Item>*Thick PERSIAN RUG*</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>6</ConditionID>
+          <Description>player not it room arg</Description>
+          <arg>17</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>6</ConditionID>
+          <Description>player not it room arg</Description>
+          <arg>33</arg>
+        </Condition>
+        <Condition>
+          <ConditionID>6</ConditionID>
+          <Description>player not it room arg</Description>
+          <arg>26</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>54</Argument>
+          <Description>move room ARG1: 17</Description>
+          <arg1>17</arg1>
+        </Action>
+        <Action>
+          <Argument>18</Argument>
+          <Description>A Output message: Something I'm holding vibrates and...</Description>
+        </Action>
+        <Action>
+          <Argument>56</Argument>
+          <Description>set darkness flag</Description>
+        </Action>
+        <Action>
+          <Argument>64</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="143" Input="HEL ANY">
+      <Verb>47</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>1</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>105</Argument>
+          <Description>A Output message: Try --&gt; `LOOK, JUMP, SWIM, CLIMB, FIND, TAKE, SCORE, DROP`  and any other verbs you can think of...</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="144" Input="THR AXE">
+      <Verb>24</Verb>
+      <Noun>11</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>5</ConditionID>
+          <Description>item arg not carried</Description>
+          <arg>11</arg>
+          <Arg1Item>Rusty axe (Magic word `BUNYON` on it)</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>38</Argument>
+          <Description>A Output message: I'm not carrying ax, take inventory!</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="145" Input="HEL ANY">
+      <Verb>47</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>20</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>110</Argument>
+          <Description>A Output message: A voice BOOOOMS out:</Description>
+        </Action>
+        <Action>
+          <Argument>116</Argument>
+          <Description>A Output message: Blow it up!</Description>
+        </Action>
+        <Action>
+          <Argument>103</Argument>
+          <Description>A Output message: Try the swamp</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="146" Input="SAY BUN">
+      <Verb>48</Verb>
+      <Noun>32</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+        <Action>
+          <Argument>85</Argument>
+          <Description>echo noun</Description>
+        </Action>
+        <Action>
+          <Argument>1</Argument>
+          <Description>A Output message: Nothing happens</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="147" Input="GO HOL">
+      <Verb>1</Verb>
+      <Noun>16</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>4</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>54</Argument>
+          <Description>move room ARG1: 5</Description>
+          <arg1>5</arg1>
+        </Action>
+        <Action>
+          <Argument>70</Argument>
+          <Description>clear screen</Description>
+        </Action>
+        <Action>
+          <Argument>64</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="148" Input="GET HON">
+      <Verb>10</Verb>
+      <Noun>42</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>23</arg>
+          <Arg1Item>*ROYAL HONEY*</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>52</Argument>
+          <Description>get item ARG1, check if can carry: 23</Description>
+          <arg1>23</arg1>
+          <Arg1Item>*ROYAL HONEY*</Arg1Item>
+        </Action>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="149" Input="HEL ANY">
+      <Verb>47</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>1</Argument>
+          <Description>A Output message: Nothing happens</Description>
+        </Action>
+        <Action>
+          <Argument>120</Argument>
+          <Description>A Output message: You might try examining things...</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="150" Input="CHO ANY">
+      <Verb>8</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>1</Argument>
+          <Description>A Output message: Nothing happens</Description>
+        </Action>
+        <Action>
+          <Argument>47</Argument>
+          <Description>A Output message: Maybe if I threw something?...</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="151" Input="THR ANY">
+      <Verb>24</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>112</Argument>
+          <Description>A Output message: Sorry, I can only throw the ax.</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="152" Input="AT ANY">
+      <Verb>7</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>7</ConditionID>
+          <Description>bitflag arg is set</Description>
+          <arg>3</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>60</Argument>
+          <Description>set ARG1 flag: 3</Description>
+          <arg1>3</arg1>
+        </Action>
+        <Action>
+          <Argument>122</Argument>
+          <Description>A Output message: OK, I threw it.</Description>
+        </Action>
+        <Action>
+          <Argument>1</Argument>
+          <Description>A Output message: Nothing happens</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="153" Input="SAV GAM">
+      <Verb>35</Verb>
+      <Noun>65</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+        <Action>
+          <Argument>71</Argument>
+          <Description>save game</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="154" Input="RUB ANY">
+      <Verb>28</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>1</Argument>
+          <Description>A Output message: Nothing happens</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="155" Input="SAY ANY">
+      <Verb>48</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+        <Action>
+          <Argument>85</Argument>
+          <Description>echo noun</Description>
+        </Action>
+        <Action>
+          <Argument>1</Argument>
+          <Description>A Output message: Nothing happens</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="156" Input="DRI ANY">
+      <Verb>42</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>119</Argument>
+          <Description>A Output message: Huh? I don't think so!</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="157" Input="DRO WAT">
+      <Verb>18</Verb>
+      <Noun>13</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>0</ConditionID>
+          <Description>item arg carried</Description>
+          <arg>12</arg>
+          <Arg1Item>Water in bottle</Arg1Item>
+        </Condition>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>18</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>104</Argument>
+          <Description>A Output message: Sizzle...</Description>
+        </Action>
+        <Action>
+          <Argument>73</Argument>
+          <Description>continue with next action</Description>
+        </Action>
+        <Action>
+          <Argument>72</Argument>
+          <Description>swap item locations ARG1 ARG2: 12 13</Description>
+          <arg1>12</arg1>
+          <arg2>13</arg2>
+          <Arg1Item>Water in bottle</Arg1Item>
+          <Arg2Item>Empty bottle</Arg2Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="158" Auto="0">
+      <Verb>0</Verb>
+      <Noun>0</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>0</arg>
+          <Arg1Item>Glowing *FIRESTONE*</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>72</Argument>
+          <Description>swap item locations ARG1 ARG2: 56 0</Description>
+          <arg1>56</arg1>
+          <Arg1Item>*FIRESTONE* (cold now)</Arg1Item>
+          <Arg2Item>Glowing *FIRESTONE*</Arg2Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="159" Input="GET FIR">
+      <Verb>10</Verb>
+      <Noun>59</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>0</arg>
+          <Arg1Item>Glowing *FIRESTONE*</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>51</Argument>
+          <Description>A Output message: No, its too hot.</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="160" Input="GET FIR">
+      <Verb>10</Verb>
+      <Noun>59</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>1</ConditionID>
+          <Description>item arg in room with player</Description>
+          <arg>56</arg>
+          <Arg1Item>*FIRESTONE* (cold now)</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+        <Action>
+          <Argument>52</Argument>
+          <Description>get item ARG1, check if can carry: 56</Description>
+          <arg1>56</arg1>
+          <Arg1Item>*FIRESTONE* (cold now)</Arg1Item>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="161" Input="FIN ANY">
+      <Verb>45</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>114</Argument>
+          <Description>A Output message: I don't know where it is</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="162" Input="REA ADV">
+      <Verb>38</Verb>
+      <Noun>62</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>2</ConditionID>
+          <Description>item arg carried or in room with player</Description>
+          <arg>62</arg>
+          <Arg1Item>Large outdoor Advertisement</Arg1Item>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>70</Argument>
+          <Description>clear screen</Description>
+        </Action>
+        <Action>
+          <Argument>123</Argument>
+          <Description>A Output message:   Check with your favorite computer dealer for the next Adventure  program: PIRATE ADVENTURE. If they don't carry `ADVENTURE` have  them call: 1-305-862-6917 today!  </Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="163" Input="LOO HOL">
+      <Verb>29</Verb>
+      <Noun>16</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>46</Argument>
+          <Description>A Output message: There's something there all right! Maybe I should go there?</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="164" Input="JUM ANY">
+      <Verb>6</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>102</Argument>
+          <Description>A Output message: Not here.</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="165" Input="ATT SPI">
+      <Verb>39</Verb>
+      <Noun>18</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>114</Argument>
+          <Description>A Output message: I don't know where it is</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="166" Input="ATT ANY">
+      <Verb>39</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>25</Argument>
+          <Description>A Output message: How?</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="167" Input="LOO ANY">
+      <Verb>29</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>118</Argument>
+          <Description>A Output message: OK</Description>
+        </Action>
+        <Action>
+          <Argument>125</Argument>
+          <Description>A Output message: I see nothing special</Description>
+        </Action>
+        <Action>
+          <Argument>76</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="168" Input="AT ANY">
+      <Verb>7</Verb>
+      <Noun>0</Noun>
+      <Conditions />
+      <ActionComponents>
+        <Action>
+          <Argument>121</Argument>
+          <Description>A Output message: What?</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+    <Action index="169" Input="GO HOL">
+      <Verb>1</Verb>
+      <Noun>16</Noun>
+      <Conditions>
+        <Condition>
+          <ConditionID>3</ConditionID>
+          <Description>player in room arg</Description>
+          <arg>29</arg>
+        </Condition>
+      </Conditions>
+      <ActionComponents>
+        <Action>
+          <Argument>54</Argument>
+          <Description>move room ARG1: 30</Description>
+          <arg1>30</arg1>
+        </Action>
+        <Action>
+          <Argument>76</Argument>
+          <Description>look</Description>
+        </Action>
+      </ActionComponents>
+    </Action>
+  </Actions>
+  <Words>
+    <Verbs Count="70">
+      <Verb value="AUT" index="0" />
+      <Verb value="GO" index="1">
+        <Alias>*ENT</Alias>
+        <Alias>*RUN</Alias>
+        <Alias>*WAL</Alias>
+        <Alias>*CLI</Alias>
+      </Verb>
+      <Verb value="JUM" index="6" />
+      <Verb value="AT" index="7" />
+      <Verb value="CHO" index="8">
+        <Alias>*CUT</Alias>
+      </Verb>
+      <Verb value="GET" index="10">
+        <Alias>*TAK</Alias>
+        <Alias>*PIC</Alias>
+        <Alias>*CAT</Alias>
+      </Verb>
+      <Verb value="LIG" index="14">
+        <Alias>*.</Alias>
+        <Alias>*IGN</Alias>
+        <Alias>*BUR</Alias>
+      </Verb>
+      <Verb value="DRO" index="18">
+        <Alias>*REL</Alias>
+        <Alias>*SPI</Alias>
+        <Alias>*LEA</Alias>
+        <Alias>*GIV</Alias>
+        <Alias>*POU</Alias>
+      </Verb>
+      <Verb value="THR" index="24">
+        <Alias>*TOS</Alias>
+      </Verb>
+      <Verb value="QUI" index="26" />
+      <Verb value="SWI" index="27" />
+      <Verb value="RUB" index="28" />
+      <Verb value="LOO" index="29">
+        <Alias>*EXA</Alias>
+        <Alias>*DES</Alias>
+      </Verb>
+      <Verb value="STO" index="32" />
+      <Verb value="SCO" index="33" />
+      <Verb value="INV" index="34" />
+      <Verb value="SAV" index="35" />
+      <Verb value="WAK" index="36" />
+      <Verb value="UNL" index="37" />
+      <Verb value="REA" index="38" />
+      <Verb value="ATT" index="39">
+        <Alias>*SLA</Alias>
+        <Alias>*KIL</Alias>
+      </Verb>
+      <Verb value="DRI" index="42">
+        <Alias>*EAT</Alias>
+      </Verb>
+      <Verb value="." index="44" />
+      <Verb value="FIN" index="45">
+        <Alias>*LOC</Alias>
+      </Verb>
+      <Verb value="HEL" index="47" />
+      <Verb value="SAY" index="48">
+        <Alias>*SPE</Alias>
+        <Alias>*CAL</Alias>
+      </Verb>
+      <Verb value="SCR" index="51">
+        <Alias>*YEL</Alias>
+        <Alias>*HOL</Alias>
+      </Verb>
+      <Verb value="." index="54" />
+      <Verb value="FIL" index="55" />
+      <Verb value="CRO" index="56" />
+      <Verb value="DAM" index="57" />
+      <Verb value="MAK" index="58">
+        <Alias>*BUI</Alias>
+      </Verb>
+      <Verb value="WAV" index="60">
+        <Alias>*TIC</Alias>
+        <Alias>*KIC</Alias>
+        <Alias>*KIS</Alias>
+        <Alias>*TOU</Alias>
+        <Alias>*FEE</Alias>
+        <Alias>*FUC</Alias>
+        <Alias>*HIT</Alias>
+        <Alias>*POK</Alias>
+      </Verb>
+      <Verb value="OPE" index="69" />
+    </Verbs>
+    <Nouns Count="70">
+      <Noun value="ANY" index="0" />
+      <Noun value="NOR" index="1" />
+      <Noun value="SOU" index="2" />
+      <Noun value="EAS" index="3" />
+      <Noun value="WES" index="4" />
+      <Noun value="UP" index="5" />
+      <Noun value="DOW" index="6" />
+      <Noun value="NET" index="7" />
+      <Noun value="FIS" index="8" />
+      <Noun value="AWA" index="9" />
+      <Noun value="MIR" index="10" />
+      <Noun value="AXE" index="11">
+        <Alias>*AX</Alias>
+      </Noun>
+      <Noun value="WAT" index="13" />
+      <Noun value="BOT" index="14">
+        <Alias>*CON</Alias>
+      </Noun>
+      <Noun value="HOL" index="16" />
+      <Noun value="LAM" index="17" />
+      <Noun value="SPI" index="18" />
+      <Noun value="WIN" index="19" />
+      <Noun value="DOO" index="20" />
+      <Noun value="MUD" index="21">
+        <Alias>*MED</Alias>
+      </Noun>
+      <Noun value="BEE" index="23" />
+      <Noun value="ROC" index="24" />
+      <Noun value="GAS" index="25" />
+      <Noun value="FLI" index="26" />
+      <Noun value="EGG" index="27" />
+      <Noun value="OIL" index="28">
+        <Alias>*SLI</Alias>
+      </Noun>
+      <Noun value="KEY" index="30" />
+      <Noun value="HEL" index="31" />
+      <Noun value="BUN" index="32" />
+      <Noun value="INV" index="33" />
+      <Noun value="LED" index="34" />
+      <Noun value="THR" index="35" />
+      <Noun value="CRO" index="36" />
+      <Noun value="BRI" index="37" />
+      <Noun value="BEA" index="38" />
+      <Noun value="DRA" index="39" />
+      <Noun value="RUG" index="40" />
+      <Noun value="RUB" index="41" />
+      <Noun value="HON" index="42" />
+      <Noun value="FRU" index="43" />
+      <Noun value="OX" index="44" />
+      <Noun value="RIN" index="45" />
+      <Noun value="CHI" index="46">
+        <Alias>*BIT</Alias>
+      </Noun>
+      <Noun value="BRA" index="48" />
+      <Noun value="SIG" index="49" />
+      <Noun value="BLA" index="50" />
+      <Noun value="WEB" index="51">
+        <Alias>*WRI</Alias>
+      </Noun>
+      <Noun value="SWA" index="53" />
+      <Noun value="LAV" index="54">
+        <Alias>*DAM</Alias>
+      </Noun>
+      <Noun value="HAL" index="56" />
+      <Noun value="TRE" index="57">
+        <Alias>*STU</Alias>
+      </Noun>
+      <Noun value="FIR" index="59" />
+      <Noun value="SHO" index="60">
+        <Alias>*BAN</Alias>
+      </Noun>
+      <Noun value="ADV" index="62" />
+      <Noun value="GLA" index="63" />
+      <Noun value="ARO" index="64" />
+      <Noun value="GAM" index="65" />
+      <Noun value="BOO" index="66" />
+      <Noun value="CHA" index="67" />
+      <Noun value="LAK" index="68" />
+      <Noun value="YOH" index="69" />
+    </Nouns>
+  </Words>
+  <Rooms Count="34">
+    <Room index="0">
+      <Description></Description>
+      <North>0</North>
+      <South>7</South>
+      <East>10</East>
+      <West>1</West>
+      <Up>0</Up>
+      <Down>24</Down>
+    </Room>
+    <Room index="1">
+      <Description>dismal swamp</Description>
+      <North>23</North>
+      <South>0</South>
+      <East>29</East>
+      <West>25</West>
+      <Up>0</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="2">
+      <Description>top of a tall cypress tree</Description>
+      <North>0</North>
+      <South>0</South>
+      <East>0</East>
+      <West>0</West>
+      <Up>0</Up>
+      <Down>1</Down>
+    </Room>
+    <Room index="3">
+      <Description>damp hollow stump in the swamp</Description>
+      <North>0</North>
+      <South>0</South>
+      <East>0</East>
+      <West>0</West>
+      <Up>1</Up>
+      <Down>4</Down>
+    </Room>
+    <Room index="4">
+      <Description>root chamber under the stump</Description>
+      <North>0</North>
+      <South>0</South>
+      <East>0</East>
+      <West>0</West>
+      <Up>3</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="5">
+      <Description>semi-dark hole by the root chamber</Description>
+      <North>0</North>
+      <South>0</South>
+      <East>0</East>
+      <West>0</West>
+      <Up>4</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="6">
+      <Description>long down sloping hall</Description>
+      <North>0</North>
+      <South>0</South>
+      <East>0</East>
+      <West>0</West>
+      <Up>5</Up>
+      <Down>7</Down>
+    </Room>
+    <Room index="7">
+      <Description>large cavern</Description>
+      <North>31</North>
+      <South>9</South>
+      <East>0</East>
+      <West>27</West>
+      <Up>6</Up>
+      <Down>12</Down>
+    </Room>
+    <Room index="8">
+      <Description>large 8 sided room</Description>
+      <North>0</North>
+      <South>31</South>
+      <East>0</East>
+      <West>0</West>
+      <Up>0</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="9">
+      <Description>royal anteroom</Description>
+      <North>7</North>
+      <South>0</South>
+      <East>0</East>
+      <West>0</West>
+      <Up>20</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="10">
+      <Description>*I'm on the shore of a lake</Description>
+      <North>26</North>
+      <South>29</South>
+      <East>0</East>
+      <West>23</West>
+      <Up>0</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="11">
+      <Description>forest</Description>
+      <North>11</North>
+      <South>11</South>
+      <East>23</East>
+      <West>11</West>
+      <Up>0</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="12">
+      <Description>maze of pits</Description>
+      <North>13</North>
+      <South>15</South>
+      <East>15</East>
+      <West>0</West>
+      <Up>0</Up>
+      <Down>13</Down>
+    </Room>
+    <Room index="13">
+      <Description>maze of pits</Description>
+      <North>0</North>
+      <South>0</South>
+      <East>0</East>
+      <West>14</West>
+      <Up>12</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="14">
+      <Description>maze of pits</Description>
+      <North>17</North>
+      <South>12</South>
+      <East>13</East>
+      <West>16</West>
+      <Up>16</Up>
+      <Down>17</Down>
+    </Room>
+    <Room index="15">
+      <Description>maze of pits</Description>
+      <North>12</North>
+      <South>0</South>
+      <East>13</East>
+      <West>12</West>
+      <Up>13</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="16">
+      <Description>maze of pits</Description>
+      <North>0</North>
+      <South>17</South>
+      <East>0</East>
+      <West>0</West>
+      <Up>14</Up>
+      <Down>17</Down>
+    </Room>
+    <Room index="17">
+      <Description>maze of pits</Description>
+      <North>17</North>
+      <South>12</South>
+      <East>12</East>
+      <West>15</West>
+      <Up>14</Up>
+      <Down>18</Down>
+    </Room>
+    <Room index="18">
+      <Description>*I'm at the bottom of a very deep chasm. High above me is
+a pair of ledges. One has a bricked up window across its face
+the other faces a Throne-room</Description>
+      <North>0</North>
+      <South>0</South>
+      <East>0</East>
+      <West>0</West>
+      <Up>17</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="19">
+      <Description>*I'm on a narrow ledge by a chasm. Across the chasm is
+the Throne-room</Description>
+      <North>0</North>
+      <South>0</South>
+      <East>0</East>
+      <West>20</West>
+      <Up>0</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="20">
+      <Description>royal chamber</Description>
+      <North>0</North>
+      <South>0</South>
+      <East>0</East>
+      <West>0</West>
+      <Up>0</Up>
+      <Down>9</Down>
+    </Room>
+    <Room index="21">
+      <Description>*I'm on a narrow ledge by a Throne-room
+Across the chasm is another ledge</Description>
+      <North>0</North>
+      <South>0</South>
+      <East>0</East>
+      <West>0</West>
+      <Up>0</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="22">
+      <Description>throne room</Description>
+      <North>0</North>
+      <South>0</South>
+      <East>0</East>
+      <West>21</West>
+      <Up>0</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="23">
+      <Description>sunny meadow</Description>
+      <North>0</North>
+      <South>1</South>
+      <East>10</East>
+      <West>11</West>
+      <Up>0</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="24">
+      <Description>*I think I'm in real trouble now. There's a fellow here with
+a pitchfork and pointed tail. ...Oh Hell!</Description>
+      <North>0</North>
+      <South>0</South>
+      <East>0</East>
+      <West>0</West>
+      <Up>0</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="25">
+      <Description>hidden grove</Description>
+      <North>11</North>
+      <South>0</South>
+      <East>1</East>
+      <West>0</West>
+      <Up>0</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="26">
+      <Description>quick-sand bog</Description>
+      <North>0</North>
+      <South>0</South>
+      <East>0</East>
+      <West>0</West>
+      <Up>0</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="27">
+      <Description>Memory chip of a COMPUTER!
+I took a wrong turn!</Description>
+      <North>0</North>
+      <South>0</South>
+      <East>7</East>
+      <West>0</West>
+      <Up>0</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="28">
+      <Description>top of an oak.
+To the East I see a meadow, beyond that a lake.</Description>
+      <North>0</North>
+      <South>0</South>
+      <East>0</East>
+      <West>0</West>
+      <Up>0</Up>
+      <Down>11</Down>
+    </Room>
+    <Room index="29">
+      <Description>*I'm at the edge of a BOTTOMLESS hole</Description>
+      <North>10</North>
+      <South>0</South>
+      <East>0</East>
+      <West>1</West>
+      <Up>0</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="30">
+      <Description>*I'm on a ledge just below the rim of the BOTTOMLESS hole. I
+don't think I want to go down</Description>
+      <North>0</North>
+      <South>0</South>
+      <East>0</East>
+      <West>0</West>
+      <Up>29</Up>
+      <Down>24</Down>
+    </Room>
+    <Room index="31">
+      <Description>long tunnel. I hear buzzing ahead</Description>
+      <North>8</North>
+      <South>7</South>
+      <East>0</East>
+      <West>0</West>
+      <Up>0</Up>
+      <Down>0</Down>
+    </Room>
+    <Room index="32">
+      <Description>*I'm in an endless corridor</Description>
+      <North>32</North>
+      <South>33</South>
+      <East>32</East>
+      <West>32</West>
+      <Up>32</Up>
+      <Down>32</Down>
+    </Room>
+    <Room index="33">
+      <Description>large misty room with strange
+unreadable letters over all the exits.</Description>
+      <North>32</North>
+      <South>24</South>
+      <East>11</East>
+      <West>24</West>
+      <Up>28</Up>
+      <Down>24</Down>
+    </Room>
+  </Rooms>
+  <Messages Count="76">
+    <Message index="0"></Message>
+    <Message index="1">Nothing happens</Message>
+    <Message index="2">Chop 'er down!</Message>
+    <Message index="3">BOY that really hit the spot!</Message>
+    <Message index="4">Dragon smells something. Awakens &amp; attacks me!</Message>
+    <Message index="5">Lock shatters</Message>
+    <Message index="6">I can't its locked</Message>
+    <Message index="7">TIMBER. Something fell from the tree top &amp; vanished in the swamp</Message>
+    <Message index="8">TIMBER!</Message>
+    <Message index="9">Lamp is off</Message>
+    <Message index="10">Lamp burns with a cold flameless blue glow.</Message>
+    <Message index="11">I'm bit by a spider</Message>
+    <Message index="12">
+My chigger bites are now INFECTED!
+</Message>
+    <Message index="13">My bites have rotted my whole body!</Message>
+    <Message index="14">Bear eats the honey and falls asleep.</Message>
+    <Message index="15">Bees sting me</Message>
+    <Message index="16">First I need an empty container.</Message>
+    <Message index="17">The bees all suffocated and disappeared</Message>
+    <Message index="18">Something I'm holding vibrates and...</Message>
+    <Message index="19">nothing to light it with</Message>
+    <Message index="20">Gas bladder blew up</Message>
+    <Message index="21">in my hands!</Message>
+    <Message index="22">gas needs to be contained before it will burn</Message>
+    <Message index="23">Gas dissipates. (I think you blew it)</Message>
+    <Message index="24">That won't ignite</Message>
+    <Message index="25">How?</Message>
+    <Message index="26">Bear won't let me</Message>
+    <Message index="27">`Don't waste honey, get mad instead! Dam lava!?`</Message>
+    <Message index="28">Bees madden bear, bear then attacks me!</Message>
+    <Message index="29">It soaks into the ground</Message>
+    <Message index="30">In 2 words tell me at what...like: AT TREE</Message>
+    <Message index="31">OH NO... Bear dodges... CRASH!</Message>
+    <Message index="32">Its heavy!</Message>
+    <Message index="33">Somethings too heavy. I fall.</Message>
+    <Message index="34">To stop game say QUIT</Message>
+    <Message index="35">Mirror hits floor and shatters into a MILLION pieces</Message>
+    <Message index="36">Mirror lands softly on rug, lights up and says:</Message>
+    <Message index="37">You lost *ALL* treasures.</Message>
+    <Message index="38">I'm not carrying ax, take inventory!</Message>
+    <Message index="39">It doesn't seem to bother him at all!</Message>
+    <Message index="40">The mud dried up and fell off.</Message>
+    <Message index="41">Bear is so startled that he FELL off the ledge!</Message>
+    <Message index="42">` DRAGON STING ` and fades. I don't get it, I hope you do.</Message>
+    <Message index="43">The bees attack the dragon which gets so annoyed it gets up
+and flys away...</Message>
+    <Message index="44">Lamp is now full &amp; lit</Message>
+    <Message index="45">
+I'm bitten by chiggers.
+</Message>
+    <Message index="46">There's something there all right! Maybe I should go there?</Message>
+    <Message index="47">Maybe if I threw something?...</Message>
+    <Message index="48">Too dry, the fish died.</Message>
+    <Message index="49">A glowing Genie appears, drops somehting, then vanishes.</Message>
+    <Message index="50">A glowing Genie appears, says `Boy you're selfish`, takes
+something and then makes `ME` vanish!</Message>
+    <Message index="51">No, its too hot.</Message>
+    <Message index="52">Not here.</Message>
+    <Message index="53">Try the swamp</Message>
+    <Message index="54">Sizzle...</Message>
+    <Message index="55">Try --&gt; `LOOK, JUMP, SWIM, CLIMB, FIND, TAKE, SCORE, DROP`
+and any other verbs you can think of...</Message>
+    <Message index="56">There are only 3 ways to wake the Dragon!</Message>
+    <Message index="57">Remember you can always say `HELP`</Message>
+    <Message index="58">Read the sign in the meadow!</Message>
+    <Message index="59">You may need to say magic words here</Message>
+    <Message index="60">A voice BOOOOMS out:</Message>
+    <Message index="61">please leave it alone</Message>
+    <Message index="62">Sorry, I can only throw the ax.</Message>
+    <Message index="63">Medicine is good for bites.</Message>
+    <Message index="64">I don't know where it is</Message>
+    <Message index="65">
+Welcome to Adventure number: 1 `ADVENTURELAND`.
+In this Adventure you're to find *TREASURES* &amp; store them away.
+
+To see how well you're doing say: `SCORE`</Message>
+    <Message index="66">Blow it up!</Message>
+    <Message index="67">Fish have escaped back to the lake.</Message>
+    <Message index="68">OK</Message>
+    <Message index="69">Huh? I don't think so!</Message>
+    <Message index="70">You might try examining things...</Message>
+    <Message index="71">What?</Message>
+    <Message index="72">OK, I threw it.</Message>
+    <Message index="73">
+Check with your favorite computer dealer for the next Adventure
+program: PIRATE ADVENTURE. If they don't carry `ADVENTURE` have
+them call: 1-305-862-6917 today!
+</Message>
+    <Message index="74">The ax vibrated!</Message>
+    <Message index="75">I see nothing special</Message>
+  </Messages>
+  <Items Count="66">
+    <Item index="0">
+      <Description>Glowing *FIRESTONE*</Description>
+      <RoomID>0</RoomID>
+    </Item>
+    <Item index="1">
+      <Description>Dark hole</Description>
+      <RoomID>4</RoomID>
+    </Item>
+    <Item index="2">
+      <Description>*Pot of RUBIES*</Description>
+      <RoomID>4</RoomID>
+      <Word>RUB</Word>
+    </Item>
+    <Item index="3">
+      <Description>Spider web with writing on it</Description>
+      <RoomID>2</RoomID>
+    </Item>
+    <Item index="4">
+      <Description>-HOLLOW- stump and remains of a felled tree</Description>
+      <RoomID>0</RoomID>
+    </Item>
+    <Item index="5">
+      <Description>Cypress tree</Description>
+      <RoomID>1</RoomID>
+    </Item>
+    <Item index="6">
+      <Description>Water</Description>
+      <RoomID>10</RoomID>
+    </Item>
+    <Item index="7">
+      <Description>Evil smelling mud</Description>
+      <RoomID>1</RoomID>
+      <Word>MUD</Word>
+    </Item>
+    <Item index="8">
+      <Description>*GOLDEN FISH*</Description>
+      <RoomID>10</RoomID>
+      <Word>FIS</Word>
+    </Item>
+    <Item index="9">
+      <Description>Lit brass lamp</Description>
+      <RoomID>0</RoomID>
+      <Word>LAM</Word>
+    </Item>
+    <Item index="10">
+      <Description>Old fashioned brass lamp</Description>
+      <RoomID>3</RoomID>
+      <Word>LAM</Word>
+    </Item>
+    <Item index="11">
+      <Description>Rusty axe (Magic word `BUNYON` on it)</Description>
+      <RoomID>10</RoomID>
+      <Word>AXE</Word>
+    </Item>
+    <Item index="12">
+      <Description>Water in bottle</Description>
+      <RoomID>3</RoomID>
+      <Word>BOT</Word>
+    </Item>
+    <Item index="13">
+      <Description>Empty bottle</Description>
+      <RoomID>0</RoomID>
+      <Word>BOT</Word>
+    </Item>
+    <Item index="14">
+      <Description>Ring of skeleton keys</Description>
+      <RoomID>2</RoomID>
+      <Word>KEY</Word>
+    </Item>
+    <Item index="15">
+      <Description>Sign `Leave *TREASURES* here, then say: SCORE`</Description>
+      <RoomID>3</RoomID>
+    </Item>
+    <Item index="16">
+      <Description>Locked door</Description>
+      <RoomID>5</RoomID>
+    </Item>
+    <Item index="17">
+      <Description>Open door with a hallway beyond</Description>
+      <RoomID>0</RoomID>
+    </Item>
+    <Item index="18">
+      <Description>Swamp gas</Description>
+      <RoomID>1</RoomID>
+    </Item>
+    <Item index="19">
+      <Description>*GOLDEN NET*</Description>
+      <RoomID>18</RoomID>
+      <Word>NET</Word>
+    </Item>
+    <Item index="20">
+      <Description>Chigger bites</Description>
+      <RoomID>0</RoomID>
+    </Item>
+    <Item index="21">
+      <Description>Infected chigger bites</Description>
+      <RoomID>0</RoomID>
+    </Item>
+    <Item index="22">
+      <Description>Patches of `OILY` slime</Description>
+      <RoomID>1</RoomID>
+      <Word>OIL</Word>
+    </Item>
+    <Item index="23">
+      <Description>*ROYAL HONEY*</Description>
+      <RoomID>8</RoomID>
+      <Word>HON</Word>
+    </Item>
+    <Item index="24">
+      <Description>Large african bees</Description>
+      <RoomID>8</RoomID>
+    </Item>
+    <Item index="25">
+      <Description>Very thin black bear</Description>
+      <RoomID>21</RoomID>
+    </Item>
+    <Item index="26">
+      <Description>Bees in a bottle</Description>
+      <RoomID>0</RoomID>
+      <Word>BOT</Word>
+    </Item>
+    <Item index="27">
+      <Description>Large sleeping dragon</Description>
+      <RoomID>23</RoomID>
+    </Item>
+    <Item index="28">
+      <Description>Flint &amp; steel</Description>
+      <RoomID>30</RoomID>
+      <Word>FLI</Word>
+    </Item>
+    <Item index="29">
+      <Description>*Thick PERSIAN RUG*</Description>
+      <RoomID>17</RoomID>
+      <Word>RUG</Word>
+    </Item>
+    <Item index="30">
+      <Description>Sign: `magic word's AWAY! Look la...`
+(Rest of sign is missing!)</Description>
+      <RoomID>18</RoomID>
+    </Item>
+    <Item index="31">
+      <Description>Distended gas bladder</Description>
+      <RoomID>0</RoomID>
+      <Word>BLA</Word>
+    </Item>
+    <Item index="32">
+      <Description>Bricked up window</Description>
+      <RoomID>20</RoomID>
+    </Item>
+    <Item index="33">
+      <Description>Sign here says `In many cases mud is good. In others...`</Description>
+      <RoomID>23</RoomID>
+    </Item>
+    <Item index="34">
+      <Description>Stream of lava</Description>
+      <RoomID>18</RoomID>
+    </Item>
+    <Item index="35">
+      <Description>Bricked up window with a hole in it</Description>
+      <RoomID>0</RoomID>
+    </Item>
+    <Item index="36">
+      <Description>Loose fire bricks</Description>
+      <RoomID>0</RoomID>
+      <Word>BRI</Word>
+    </Item>
+    <Item index="37">
+      <Description>*GOLD CROWN*</Description>
+      <RoomID>22</RoomID>
+      <Word>CRO</Word>
+    </Item>
+    <Item index="38">
+      <Description>*MAGIC MIRROR*</Description>
+      <RoomID>21</RoomID>
+    </Item>
+    <Item index="39">
+      <Description>Sleeping bear</Description>
+      <RoomID>0</RoomID>
+    </Item>
+    <Item index="40">
+      <Description>Empty wine bladder</Description>
+      <RoomID>9</RoomID>
+      <Word>BLA</Word>
+    </Item>
+    <Item index="41">
+      <Description>Broken glass</Description>
+      <RoomID>0</RoomID>
+      <Word>GLA</Word>
+    </Item>
+    <Item index="42">
+      <Description>Chiggers</Description>
+      <RoomID>1</RoomID>
+      <Word>CHI</Word>
+    </Item>
+    <Item index="43">
+      <Description>Slightly woozy bear</Description>
+      <RoomID>0</RoomID>
+    </Item>
+    <Item index="44">
+      <Description>*DRAGON EGGS* (very rare)</Description>
+      <RoomID>0</RoomID>
+      <Word>EGG</Word>
+    </Item>
+    <Item index="45">
+      <Description>Lava stream with brick dam</Description>
+      <RoomID>0</RoomID>
+    </Item>
+    <Item index="46">
+      <Description>*JEWELED FRUIT*</Description>
+      <RoomID>25</RoomID>
+      <Word>FRU</Word>
+    </Item>
+    <Item index="47">
+      <Description>*Small statue of a BLUE OX*</Description>
+      <RoomID>26</RoomID>
+      <Word>OX</Word>
+    </Item>
+    <Item index="48">
+      <Description>*DIAMOND RING*</Description>
+      <RoomID>0</RoomID>
+      <Word>RIN</Word>
+    </Item>
+    <Item index="49">
+      <Description>*DIAMOND BRACELET*</Description>
+      <RoomID>0</RoomID>
+      <Word>BRA</Word>
+    </Item>
+    <Item index="50">
+      <Description>Strange scratchings on rock says: `ALADIN was here`</Description>
+      <RoomID>14</RoomID>
+    </Item>
+    <Item index="51">
+      <Description>Sign says `LIMBO. Find right exit and live again!`</Description>
+      <RoomID>33</RoomID>
+    </Item>
+    <Item index="52">
+      <Description>Smoking hole. pieces of dragon and gore.</Description>
+      <RoomID>0</RoomID>
+    </Item>
+    <Item index="53">
+      <Description>Sign says `No swimming allowed here`</Description>
+      <RoomID>10</RoomID>
+    </Item>
+    <Item index="54">
+      <Description>Arrow pointing down</Description>
+      <RoomID>17</RoomID>
+    </Item>
+    <Item index="55">
+      <Description>Dead fish</Description>
+      <RoomID>0</RoomID>
+      <Word>FIS</Word>
+    </Item>
+    <Item index="56">
+      <Description>*FIRESTONE* (cold now)</Description>
+      <RoomID>0</RoomID>
+      <Word>FIR</Word>
+    </Item>
+    <Item index="57">
+      <Description>Sign says `Paul's place`</Description>
+      <RoomID>25</RoomID>
+    </Item>
+    <Item index="58">
+      <Description>Trees</Description>
+      <RoomID>11</RoomID>
+    </Item>
+    <Item index="59">
+      <Description>Sign here says `Opposite of LIGHT is UNLIGHT`</Description>
+      <RoomID>12</RoomID>
+    </Item>
+    <Item index="60">
+      <Description>Empty lamp</Description>
+      <RoomID>0</RoomID>
+      <Word>LAM</Word>
+    </Item>
+    <Item index="61">
+      <Description>Muddy worthless old rug</Description>
+      <RoomID>0</RoomID>
+      <Word>RUG</Word>
+    </Item>
+    <Item index="62">
+      <Description>Large outdoor Advertisement</Description>
+      <RoomID>29</RoomID>
+      <Word>ADV</Word>
+    </Item>
+    <Item index="63">
+      <Description>Hole</Description>
+      <RoomID>29</RoomID>
+    </Item>
+    <Item index="64">
+      <Description></Description>
+      <RoomID>0</RoomID>
+    </Item>
+    <Item index="65">
+      <Description></Description>
+      <RoomID>0</RoomID>
+    </Item>
+  </Items>
+  <Footer>
+    <Version>416</Version>
+    <AdventureNumber>1</AdventureNumber>
+    <Unknown>819</Unknown>
+  </Footer>
+</GameData>
