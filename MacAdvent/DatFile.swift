@@ -1,8 +1,5 @@
 //
-//  DatFile.swift
-//  MacAdvent
-//
-//  Created by Andy Stobirski on 19/03/2025.
+//  DatFile.swift - contains the converted dat file
 //
 
 class DatFile : Codable {
@@ -16,15 +13,7 @@ class DatFile : Codable {
     var Items:[Item] = []   
 
     
-    enum CodingKeys: String, CodingKey {
-        case Header
-        case Actions
-        case Verbs
-        case Nouns
-        case Rooms
-        case Messages
-        case Items
-    }
+ 
     
     // Custom encoding method
     func encode(to encoder: Encoder) throws {
