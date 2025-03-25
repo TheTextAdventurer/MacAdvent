@@ -24,6 +24,7 @@ class Advent {
     
     func load(pGame: String){
         GameFile = ConvertDat.Load(pGame: pGame)
+        ConvertDat.OutputToJson(pDatFile: GameFile ?? DatFile())
     }
     
     func getDocumentsDirectory() -> URL {

@@ -128,6 +128,7 @@ class ConvertDat {
         //
         var action: DatFile.Action!
         while ctr < datFile.Header.numActions {
+            
             action = DatFile.Action(actions: convertStringsToInts(GetNItems(8)))
             action.Index = ctr
             datFile.Actions+=[action]
@@ -137,7 +138,6 @@ class ConvertDat {
         //
         // Words
         //
-        
         var verbsRAW: [String] = [] //Only used in building comments for the action
         var nounsRAW: [String] = [] //Only used in building comments for the action
         
@@ -157,12 +157,14 @@ class ConvertDat {
                     {
                         V.Aliases += [alias]
                         verbsRAW+=[worditem]
+                        verbCtr+=1
                     }
                 } else {
                     if  let N = datFile.Nouns.last
                     {
                         N.Aliases += [alias]
                         nounsRAW+=[worditem]
+                        nounCtr+=1
                     }
                 }
             }
@@ -231,7 +233,7 @@ class ConvertDat {
             if (actionComment.count > 0)
             {
                 let Action = datFile.Actions[ctr]
-                Action.Comment += [actionComment]
+                Action.Comment = actionComment
             }
             ctr+=1
         }
@@ -243,48 +245,100 @@ class ConvertDat {
         datFile.Actions.forEach {action in
             
             print (action.Index, action.Comment.first ?? "")
-            
-            
-            if action.Index == 34
-            {
-                print ("STOP")
-            }
-            
+                        
             if action.Verb > 0 {
                 
-                action.Comment += [String(format: "User command: %@ %@", verbsRAW[action.Verb], action.Noun > 0 ? nounsRAW[action.Noun] : "")]
+                action.Comment += String(format: "User command: %@ %@", verbsRAW[action.Verb], action.Noun > 0 ? nounsRAW[action.Noun] : "")
             }
             else
             {
-                action.Comment += [String(format: "Probability: %d",action.Noun)]
+                action.Comment += String(format: "Probability: %d",action.Noun)
             }
             
+        
+            //build the comments for conditions
             if (action.Conditions.count > 0)
             {
-                action.Comment += ["if"]
-                
                 action.Conditions.forEach {condition in
                     
+                    print(condition.AsCondition())
+                    
                     var con = Resources.conditions[condition.ItemID]
-                    con = "\t\(con)"
-                    
-                    if Resources.conditionsWithItems.contains(condition.ItemID)
+
+                    if Resources.ConditionsOneItem.contains(condition.ItemID)
                     {
-                        con = con.replacingOccurrences(of: "arg", with: datFile.Items[condition.ArgID.first ?? 0].Description)
+                        con = String(format: con,  datFile.Items[condition.ArgID.first ?? 0].Description)
                     }
-                    else if con.range(of: "arg") != nil {
+                    else if Resources.ConditionOneRoom.contains(condition.ItemID)
+                        || Resources.ConditionOneInteger.contains(condition.ItemID)
+                    {
                         
-                        con = con.replacingOccurrences(of: "arg", with: String(condition.ArgID.first ?? 0))
+                        con = String(format: con, condition.ArgID.first ?? 0 )
                         
                     }
                     
-                    action.Comment += [con]
+                    print("\t\(con)")
+                    condition.Description = con
                     
                 }
             }
+            
+             
+            // built the comments for actions
+            if action.Actions.count > 0 {
 
+                action.Actions.sorted(by: { $0.Index < $1.Index }).forEach {comp in
+                    
+                    print(comp.AsAction())
+                    
+                    var act = ""
+
+                    if (comp.ItemID > 0 && comp.ItemID < 52)
+                    {
+                        act = String(format: "Print message '%@'", datFile.Messages[comp.ItemID])
+                    }
+                    else if (comp.ItemID > 101)
+                    {
+                        act = String(format: "Print message '%@'", datFile.Messages[comp.ItemID-50])
+                    }
+                    else
+                    {
+                        let actID = comp.ItemID - 52
+                        
+                        act = Resources.actions[actID]
+                        
+                        if Resources.ActionOneItem.contains(comp.ItemID)
+                        {
+                            act = String(format: act, datFile.Items[comp.ArgID[0]].Description)
+                        }
+                        else if Resources.ActionTwoItems.contains(comp.ItemID)
+                        {
+                            act = String(format: act, datFile.Items[comp.ArgID[0]].Description, datFile.Items[comp.ArgID[1]].Description)
+                        }
+                        else if Resources.ActionItemRoom.contains(comp.ItemID)
+                        {
+                            act = String(format: act, datFile.Items[comp.ArgID[0]].Description, comp.ArgID[1])
+                        }
+                        else if Resources.ActionRoom.contains(comp.ItemID)
+                                    || Resources.ActionInteger.contains(comp.ItemID){
+                            act = String(format: act, comp.ArgID[0])
+                        }
+                        else
+                        {
+                            //No args required
+                        }
+                    }
+                    print("\t\(act)")
+                    comp.Description = act
+                }
+            }
         }
+        return datFile
+    }
+    
+    static func OutputToJson(pDatFile: DatFile) {
         
+        let fileURL = getDocumentsDirectory().appendingPathComponent("adv01.json")
         
         
         //
@@ -292,16 +346,17 @@ class ConvertDat {
         //
         do {
             let encoder = JSONEncoder()
-            encoder.outputFormatting = [.prettyPrinted] // Enable pretty printing
-            let jsonData = try encoder.encode(datFile)
-            let fileURL = getDocumentsDirectory().appendingPathComponent("adv01.json")
+            encoder.outputFormatting = [.sortedKeys, .prettyPrinted]
+            
+            let jsonData = try encoder.encode(pDatFile)
+            
             try jsonData.write(to: fileURL)
 
         } catch {
             print("Error encoding user to JSON or writing to file: \(error)")
         }
         
-        return datFile
-        
+
     }
+    
 }

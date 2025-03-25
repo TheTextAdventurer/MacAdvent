@@ -13,7 +13,16 @@ class DatFile : Codable {
     var Items:[Item] = []   
 
     
- 
+    enum CodingKeys: String, CodingKey {
+          case Header
+          case Actions
+          case Verbs
+          case Nouns
+          case Rooms
+          case Messages
+          case Items
+      }
+
     
     // Custom encoding method
     func encode(to encoder: Encoder) throws {
@@ -59,14 +68,25 @@ class DatFile : Codable {
     }
     
     class Action : Codable {
+        /*
+        func encode(to encoder: any Encoder) throws {
+            var container = encoder.container(keyedBy:    CodingKeys.self)
+            try container.encode(Index, forKey: .Actions)
+            try container.encode(Comment, forKey: .Comment)
+            try container.encode(Verb, forKey: .Conditions)
+            try container.encode(Noun, forKey: .Index)
+            try container.encode(Conditions, forKey: .Noun)
+            try container.encode(Actions, forKey: .Verb)
+        }
+         */
+        
         var Index: Int = 0
         var Verb: Int = 0   //ID of verb in DAT file list
         var Noun: Int = 0
         var Conditions:[ActionComponent] = []
         var Actions:[ActionComponent] = []
-        var Comment: [String] = []
-        //private var comments: [String] = [String]
-        
+        var Comment: String = ""
+
         init(actions: [Int]) {
             Verb = actions[0] / 150
             Noun = actions[0] % 150
@@ -78,90 +98,98 @@ class DatFile : Codable {
             }
             
             var ActionArgs:[Int] = []
+            var ctr: Int = 0
             
             // Process conditions
             for c in 1...5 {
                 
                 let con = actions[c]
                 
-                let contNum = con % 20 - 1
+                let contNum = con % 20 
                 let conArg = con / 20 
                 
                 if (contNum > 0)
                 {
-                    self.Conditions += [ActionComponent(ItemID: contNum, ArgID: conArg)]
+                    self.Conditions += [ActionComponent(ItemID: contNum - 1, ArgID: conArg, Index: ctr)]
+                    ctr+=1
                 }
                 else
                 {
-                    ActionArgs += [contNum]
+                    ActionArgs += [conArg]
                 }
             }
             
             // Get actions 1 / 2
+            ctr = 0
             for a in 6...7 {
                 let arg1 = actions[a] / 150
                 let arg2 = actions[a] % 150
                 
                 if (arg1 > 0)
                 {
-                    self.Actions += [ActionComponent(ItemID: arg1)]
+                    self.Actions += [ActionComponent(ItemID: arg1, Index: ctr)]
+                    ctr+=1
                 }
                 
                 if (arg2 > 0)
                 {
-                    self.Actions += [ActionComponent(ItemID: arg2)]
+                    self.Actions += [ActionComponent(ItemID: arg2, Index: ctr)]
+                    ctr+=1
                 }
             }
             
-            /*
+            
             
             // Examine actions and assign arguments to then
             var x = 0
             self.Actions.forEach { (ac) in
                 
-                if Resources.actionArgsWithOneItem.contains(ac.ItemID) {
+                if Resources.ActionOneItem.contains(ac.ItemID)
+                    || Resources.ActionRoom.contains(ac.ItemID)
+                    || Resources.ActionInteger.contains(ac.ItemID){
+                    
                     ac.ArgID += [ActionArgs[x]]
                     x+=1
                 }
-                else if Resources.actionsWithTwoItems.contains(ac.ItemID) {
+                else if Resources.ActionTwoItems.contains(ac.ItemID)
+                || Resources.ActionItemRoom.contains(ac.ItemID) {
                     ac.ArgID += [ActionArgs[x]]
                     ac.ArgID += [ActionArgs[x + 1]]
                     x+=2
                 }
                 
             }
-             */
+             
             
         }
         
         class ActionComponent: Codable {
             
+            func AsCondition() -> String {
+                return "ConditionID \(ItemID) ArgID \(ArgID.first ?? 0)"
+            }
+            
+            func AsAction() -> String {
+                return "ActionID \(ItemID) ArgID \(ArgID.map { String($0) }.joined(separator: ", "))"
+            }
+            
             var ItemID: Int = 0
             var ArgID: [Int] = []
+            var Index: Int
+            var Description: String = ""
             
-            init(ItemID: Int, ArgID: Int) {
+            init(ItemID: Int, ArgID: Int, Index: Int) {
                 self.ItemID = ItemID
                 self.ArgID += [ArgID]
+                self.Index = Index
             }
             
-            init(ItemID: Int) {
+            init(ItemID: Int, Index: Int) {
                 self.ItemID = ItemID
+                self.Index = Index
             }
         }
-        
-        class Condition: Codable {
-            
-            var ConditionID: Int = 0
-            var ConditionDescription: String = ""
-            var ArgID: Int = 0
-            var ArgDescription: String = ""
-            
-            init(ConditionID: Int, ArgID: Int) {
-                self.ConditionID = ConditionID
-                self.ArgID = ArgID
-            }
-        }
-        
+                
     }
 
     class Word : Codable {
