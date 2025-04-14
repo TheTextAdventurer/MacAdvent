@@ -13,19 +13,5 @@ struct MacAdventApp: App {
         WindowGroup {
             ContentView()
         }
-        .commands {
-            // Add custom menu items here
-            CommandMenu("My Menu") {
-                Button("Menu Item 1") {
-                    // Action for Menu Item 1
-                    print("Menu Item 1 selected")
-                }
-                Button("Menu Item 2") {
-                    // Action for Menu Item 2
-                    print("Menu Item 2 selected")
-                }
-                // Add more menu items as needed
-            }
-        }
     }
 }
