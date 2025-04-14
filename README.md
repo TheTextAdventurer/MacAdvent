@@ -12,6 +12,18 @@ These games can be downloaded from his website, from the [Downloads section](htt
 
 Start the app, and click the Folder icon in the top right corner, and select Open and browse to one of the downloaded game files. (I haven't figureed out how to modify the menu bar for the app yet, so apologies for this unsatisfying solution).
 
+## Additional Commands
+
+When playing there are several commands used in testing and debug:
+
+* #A - execute a game action
+* #C - test a game condition
+* #CURRENTROOM - display the current room ID
+* #LAMP - display lamp turns remaining
+* #ITEMS - list all items in room and their IDs
+* #MD - output a human readable form of the currently loaded game in GitHub markdown
+* #JSON - output current game file as in JSON format
+
 ## References
 
 * [Scott Adams Grand Adventures](https://www.msadams.com/index.htm) - The Official Site for the Creator of the Personal Computer Gaming Industry!

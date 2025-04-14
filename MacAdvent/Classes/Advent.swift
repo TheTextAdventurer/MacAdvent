@@ -676,6 +676,20 @@ class Advent {
                 let items = GameFile!.Items.filter{ $0.RoomID == GameSettings.CurrentRoom}.map{"\($0.Description)-\($0.Index)"}
                 GameMessage(pMessage: items.joined(separator: ", "))
                 
+            case "#MD":
+                Utils.saveFile { url in
+                    if let url = url {
+                        ConvertDat.OutputAsMD(pOutput: url, pDatFile: self.GameFile!)
+                    }
+                }
+                
+            case "#JSON":
+                Utils.saveFile { url in
+                    if let url = url {
+                        Utils.SaveAsJSON(item: self.GameFile, fileURL: url)
+                    }
+                }
+                
             default:
                 GameMessage(pMessage: "Not recognised: \(components[0])")
             }

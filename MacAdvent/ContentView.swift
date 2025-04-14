@@ -88,25 +88,6 @@ struct ContentView: View {
                                 }
                             }
                         }
-
-                        Button("Save as MD") {
-                            Utils.saveFile { url in
-                                if let url = url {
-                                    ConvertDat.OutputAsMD(pOutput: url, pDatFile: advent.GameFile ?? DatFile())
-                                }
-                            }
-                        }
-
-                        Button("Save as JSON") {
-                            if (advent.GameFile != nil)
-                            {
-                                Utils.saveFile { url in
-                                    if let url = url {
-                                        Utils.SaveAsJSON(item: self.advent.GameFile, fileURL: url)
-                                    }
-                                }
-                            }
-                        }
                     } label: {
                         Label("File", systemImage: "folder")
                     }
@@ -116,7 +97,6 @@ struct ContentView: View {
             .padding()
             .background(Color.black)
             .onAppear{
-                
                 isInputFocused = true
                 advent.onGameMessage = {(message, refresh) in
                     
@@ -129,7 +109,6 @@ struct ContentView: View {
                         self.TextRoomView += ("\n\(message)")
                     }
                 }
-        
                 if let fileURL = Bundle.main.url(forResource: "adv04", withExtension: "dat") {
                     do {
                         let gameContent = try String(contentsOf: fileURL, encoding: .utf8)
