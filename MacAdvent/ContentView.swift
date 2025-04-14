@@ -48,7 +48,7 @@ struct ContentView: View {
                     .customFont()
 
             // Userinput
-            TextField("Tell me what to do...", text: $TextUserInput)
+            TextField(Resources.playerPrompt, text: $TextUserInput)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .foregroundColor(.white)
                 .background(Color.black)
