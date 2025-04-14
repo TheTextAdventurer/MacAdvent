@@ -141,5 +141,15 @@ class Resources {
      ]
      
      static let DirectionsLong = ["North", "South", "East", "West", "Up", "Down"]
+    
+    static let Abbreviations: [[String]] =
+    [
+        ["I", "INVENTORY"]
+        , ["L", "LOOK"]
+        , ["X", "EXAMINE"]
+        , ["Z", "WAIT"]
+        , ["T", "TAKE"]
+        , ["D", "DROP"]
+    ]
 
 }

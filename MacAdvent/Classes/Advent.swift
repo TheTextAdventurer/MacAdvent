@@ -698,33 +698,33 @@ class Advent {
         {
             
             
-            
             // PROCESS GAME INPUT
             GameMessage(pMessage: "")
             self.GameSettings.TurnCounter += 1
             
-            // reduce inputed word to min word length
-            let truncatedWords = components.map { word in
-                return word.count >= MinWordLength() ? String(word.prefix(MinWordLength())) : word
-            }
             
-            var Verb = truncatedWords[0]
-            let Noun = truncatedWords.count > 1 ? truncatedWords[1] : ""
+            var Verb = components[0]
+            var Noun = components.count > 1 ? components[1] : ""
             
-            // special case for inventory
-            if (Verb.compare("i",options: .caseInsensitive) == .orderedSame)
+            // Special case for abbreviations
+            if let Abbr = SearchAbbreviations(pSearch: Verb)
             {
-                Verb = GameFile!.Verbs.first(where:{ $0.Word == "INV"})!.Word
+                Verb = Abbr
             }
+            
+            Verb = Verb.count > MinWordLength() ? String(Verb.prefix(MinWordLength())) : Verb
+            Noun = Noun != "" ? (Noun.count > MinWordLength() ? String(Noun.prefix(MinWordLength())) : Noun) : ""
+            
+ 
             
             GameSettings.VerbInt = SearchWordList(pIsVerb: true, pSearchWord: Verb)
-            GameSettings.NounInt = truncatedWords.count == 2 ? SearchWordList(pIsVerb: false, pSearchWord: Noun) : -1
+            GameSettings.NounInt = Noun != "" ? SearchWordList(pIsVerb: false, pSearchWord: Noun) : -1
            
-            if (GameSettings.VerbInt == -1  && GameSettings.NounInt == -1 && IsDirection(pDir: truncatedWords[0]) > -1)
+            if (GameSettings.VerbInt == -1  && GameSettings.NounInt == -1 && IsDirection(pDir: Noun ) > -1)
             {
                 //If one word is entered, and it's a direction the verb / noun to GO DIR
                 GameSettings.VerbInt = Resources.Constants.verbGo.rawValue
-                GameSettings.NounInt = IsDirection(pDir: truncatedWords[0])
+                GameSettings.NounInt = IsDirection(pDir: Noun)
                 
             }
             
@@ -791,6 +791,17 @@ class Advent {
             pRefresh: false
         )
         
+    }
+    
+    // Search abbreviations
+    func SearchAbbreviations (pSearch: String) -> String?
+    {
+        for entry in Resources.Abbreviations {
+               if entry[0].caseInsensitiveCompare(pSearch) == .orderedSame {
+                   return entry[1] // Return the second element if a match is found
+               }
+           }
+           return nil // Return nil if no match is found
     }
     
     // An items's location has changed, update settings
