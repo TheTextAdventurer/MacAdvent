@@ -10,6 +10,18 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
+struct CustomFontModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("Courier New", size: 14)) // Specify your font here
+    }
+}
+
+extension View {
+    func customFont() -> some View {
+        self.modifier(CustomFontModifier())
+    }
+}
 
 struct ContentView: View {
     
@@ -27,12 +39,13 @@ struct ContentView: View {
             // Roomview
             TextEditor( text: $TextRoomView)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                       .background(Color.gray.opacity(0.2))
-                       .padding(.horizontal, 5)
-                       .padding(.vertical, 5)
-                       .cornerRadius(8)
-                       .frame(minWidth: 300, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity)
-                       .disabled(true)
+                    .background(Color.gray.opacity(0.2))
+                    .padding(.horizontal, 5)
+                    .padding(.vertical, 5)
+                    .cornerRadius(8)
+                    .frame(minWidth: 300, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity)
+                    .disabled(true)
+                    .customFont()
 
             // Userinput
             TextField("Tell me what to do...", text: $TextUserInput)
@@ -43,7 +56,8 @@ struct ContentView: View {
                 .padding(.vertical, 5)
                 .cornerRadius(8)
                 .focused($isInputFocused)
-                .frame(maxWidth: .infinity) // Ensure it takes full width
+                .frame(maxWidth: .infinity)
+                .customFont()
                 .onSubmit {
                     if self.TextUserInput.trimmingCharacters(in: .whitespaces).count > 0 {
                         advent.UserInput(pInput: self.TextUserInput)
@@ -51,6 +65,7 @@ struct ContentView: View {
                     }
                 }
             }
+        
             .navigationTitle("Advent")
             .toolbar {
                 ToolbarItem(placement: .automatic) {

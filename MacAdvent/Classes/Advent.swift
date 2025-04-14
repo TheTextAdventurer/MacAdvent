@@ -490,12 +490,13 @@ class Advent {
                         let items = GetItemsInRoom(pRoomID: GameSettings.CurrentRoom)
                         if (items.count > 0)
                         {
-                            description = String(format: "%@%@%@%@%@"
+                            description = String(format: "%@%@%@%@%@%@"
                                                  , room.Description
                                                  , Resources.StringCarraigeReturn
                                                  , Resources.StringCarraigeReturn
                                                  , Resources.StringIcanSee
                                                  , items.map { "\($0.Description)" }.joined(separator: ", ")
+                                                 , Resources.StringCarraigeReturn
                             )
                         }
                     }
