@@ -246,10 +246,10 @@ class ConvertDat {
                     DatFile.Action.ActionComponent(ItemID: 1, ArgID: item.Index, Index: aTake.Conditions.count+1)
                 ]
                 //Take item, check if can carry
-                aTake.Actions +=
+                aTake.Opcodes +=
                 [
-                    DatFile.Action.ActionComponent(ItemID: 52, ArgID: item.Index, Index: aTake.Actions.count+1)
-                    , DatFile.Action.ActionComponent(ItemID: 64, ArgID: 0, Index: aTake.Actions.count+2)
+                    DatFile.Action.ActionComponent(ItemID: 52, ArgID: item.Index, Index: aTake.Opcodes.count+1)
+                    , DatFile.Action.ActionComponent(ItemID: 64, ArgID: 0, Index: aTake.Opcodes.count+2)
                 ]
                 aTake.Comment = "Take for item \(item.Description)"
                 datFile.Actions += [aTake]
@@ -265,10 +265,10 @@ class ConvertDat {
                     DatFile.Action.ActionComponent(ItemID: 0, ArgID: item.Index, Index: aTake.Conditions.count+1)
                 ]
                 //Drop item into current room
-                aDrop.Actions +=
+                aDrop.Opcodes +=
                 [
-                    DatFile.Action.ActionComponent(ItemID: 53, ArgID: item.Index, Index: aTake.Actions.count+1)
-                    , DatFile.Action.ActionComponent(ItemID: 64, ArgID: 0, Index: aTake.Actions.count+2)
+                    DatFile.Action.ActionComponent(ItemID: 53, ArgID: item.Index, Index: aTake.Opcodes.count+1)
+                    , DatFile.Action.ActionComponent(ItemID: 64, ArgID: 0, Index: aTake.Opcodes.count+2)
                 ]
                 aDrop.Comment = "Drop for item \(item.Description)"
                 datFile.Actions += [aDrop]
@@ -299,43 +299,52 @@ class ConvertDat {
         //
         //  LOAD / SAVE game
         //
+        
+        var wrdSAV:String = "SAVE"
+        var wrdLOA:String = "LOAD"
+        var wrdGAM:String = "GAME"
+        
+        wrdSAV = String(wrdSAV.prefix(datFile.Header.wordLength))
+        wrdLOA = String(wrdLOA.prefix(datFile.Header.wordLength))
+        wrdGAM = String(wrdGAM.prefix(datFile.Header.wordLength))
+        
         var SAV:DatFile.Word
         var LOA:DatFile.Word
         var GAM:DatFile.Word
-        if !verbsRAW.contains("SAV")
+        if !verbsRAW.contains(wrdSAV)
         {
-            verbsRAW.append("SAV")
-            SAV = DatFile.Word(word: "SAV")
+            verbsRAW.append(wrdSAV)
+            SAV = DatFile.Word(word: wrdSAV)
             SAV.Index = verbsRAW.count + 1
             datFile.Verbs += [SAV]
         }
         else
         {
-            SAV = datFile.Verbs.filter { $0.Word == "SAV" }.first ?? DatFile.Word(word: "SAV")
+            SAV = datFile.Verbs.filter { $0.Word == wrdSAV }.first ?? DatFile.Word(word: wrdSAV)
         }
         
-        if !verbsRAW.contains("LOA")
+        if !verbsRAW.contains(wrdLOA)
         {
-            verbsRAW.append("LOA")
-            LOA = DatFile.Word(word: "LOA")
+            verbsRAW.append(wrdLOA)
+            LOA = DatFile.Word(word: wrdLOA)
             LOA.Index = verbsRAW.count + 1
             datFile.Verbs += [LOA]
         }
         else
         {
-            LOA = datFile.Verbs.filter { $0.Word == "LOA" }.first ?? DatFile.Word(word: "LOA")
+            LOA = datFile.Verbs.filter { $0.Word == wrdLOA }.first ?? DatFile.Word(word: wrdLOA)
         }
         
-        if !nounsRAW.contains("GAM")
+        if !nounsRAW.contains(wrdGAM)
         {
-            nounsRAW.append("GAM")
-            GAM = DatFile.Word(word: "GAM")
+            nounsRAW.append(wrdGAM)
+            GAM = DatFile.Word(word: wrdGAM)
             GAM.Index = nounsRAW.count + 1
             datFile.Nouns += [GAM]
         }
         else
         {
-            GAM = datFile.Nouns.filter { $0.Word == "GAM" }.first ?? DatFile.Word(word: "GAM")
+            GAM = datFile.Nouns.filter { $0.Word == wrdGAM }.first ?? DatFile.Word(word: wrdGAM)
         }
         
         // Search for load game action
@@ -346,12 +355,10 @@ class ConvertDat {
             aLoad.Noun = GAM.Index
             aLoad.Comment = "Manually added load game action"
             aLoad.Index =  datFile.Actions.count + 1
-            
-            aLoad.Actions +=
+            aLoad.Opcodes +=
             [
                 DatFile.Action.ActionComponent(ItemID: 89, ArgID: 0, Index:0)
             ]
-            
             datFile.Actions += [aLoad]
         }
         
@@ -363,12 +370,10 @@ class ConvertDat {
             aSave.Noun = GAM.Index
             aSave.Comment = "Manually added save game action"
             aSave.Index =  datFile.Actions.count + 1
-            
-            aSave.Actions +=
+            aSave.Opcodes +=
             [
                 DatFile.Action.ActionComponent(ItemID: 71, ArgID: 0, Index:0)
             ]
-            
             datFile.Actions += [aSave]
         }
         
@@ -433,6 +438,7 @@ class ConvertDat {
         
         return escapedString.replacingOccurrences(of: "\n", with: " ")
     }
+    
     
     // Output the provided DatFile as a GitHub MD file
     static func OutputAsMD(pOutput: URL, pDatFile: DatFile) {
@@ -517,14 +523,14 @@ class ConvertDat {
                     
                     //print(condition.AsCondition())
                     
-                    var con = Resources.conditions[condition.ItemID]
+                    var con = Resources.conditions[condition.ID]
 
-                    if Resources.ConditionsOneItem.contains(condition.ItemID)
+                    if Resources.ConditionsOneItem.contains(condition.ID)
                     {
                         con = String(format: con,  escapeMarkdown(pDatFile.Items[condition.ArgID.first ?? 0].Description) + "(index:\(condition.ArgID.first ?? 0))")
                     }
-                    else if Resources.ConditionOneRoom.contains(condition.ItemID)
-                        || Resources.ConditionOneInteger.contains(condition.ItemID)
+                    else if Resources.ConditionOneRoom.contains(condition.ID)
+                        || Resources.ConditionOneInteger.contains(condition.ID)
                     {
                         con = String(format: con, condition.ArgID.first ?? 0 )
                     }
@@ -535,39 +541,39 @@ class ConvertDat {
             
              
             // built the comments for actions
-            if action.Actions.count > 0 {
+            if action.Opcodes.count > 0 {
                 
-                action.Actions.sorted(by: { $0.Index < $1.Index }).forEach {comp in
+                action.Opcodes.sorted(by: { $0.Index < $1.Index }).forEach {comp in
                     var act = ""
 
-                    if (comp.ItemID > 0 && comp.ItemID < 52)
+                    if (comp.ID > 0 && comp.ID < 52)
                     {
-                        act = String(format: "Print message '%@'", escapeMarkdown(pDatFile.Messages[comp.ItemID]))
+                        act = String(format: "Print message '%@'", escapeMarkdown(pDatFile.Messages[comp.ID]))
                     }
-                    else if (comp.ItemID > 101)
+                    else if (comp.ID > 101)
                     {
-                        act = String(format: "Print message '%@'", escapeMarkdown(pDatFile.Messages[comp.ItemID-50]))
+                        act = String(format: "Print message '%@'", escapeMarkdown(pDatFile.Messages[comp.ID-50]))
                     }
                     else
                     {
-                        let actID = comp.ItemID - 52
+                        let actID = comp.ID - 52
                         
                         act = Resources.actions[actID]
                         
-                        if Resources.ActionOneItem.contains(comp.ItemID)
+                        if Resources.ActionOneItem.contains(comp.ID)
                         {
                             act = String(format: act, pDatFile.Items[comp.ArgID[0]].Description + "(index:\(comp.ArgID[0]))")
                         }
-                        else if Resources.ActionTwoItems.contains(comp.ItemID)
+                        else if Resources.ActionTwoItems.contains(comp.ID)
                         {
                             act = String(format: act, pDatFile.Items[comp.ArgID[0]].Description + "(index:\(comp.ArgID[0]))", pDatFile.Items[comp.ArgID[1]].Description + "(index:\(comp.ArgID[1]))")
                         }
-                        else if Resources.ActionItemRoom.contains(comp.ItemID)
+                        else if Resources.ActionItemRoom.contains(comp.ID)
                         {
                             act = String(format: act, pDatFile.Items[comp.ArgID[0]].Description + "(index:\(comp.ArgID[0]))", comp.ArgID[1])
                         }
-                        else if Resources.ActionRoom.contains(comp.ItemID)
-                                    || Resources.ActionInteger.contains(comp.ItemID){
+                        else if Resources.ActionRoom.contains(comp.ID)
+                                    || Resources.ActionInteger.contains(comp.ID){
                             act = String(format: act, comp.ArgID[0])
                         }
                         else

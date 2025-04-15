@@ -54,7 +54,7 @@ class DatFile : Codable {
         var Verb: Int = 0   //ID of verb in DAT file list
         var Noun: Int = 0
         var Conditions:[ActionComponent] = []
-        var Actions:[ActionComponent] = []
+        var Opcodes:[ActionComponent] = []
         var Comment: String = ""
         
         init()
@@ -97,30 +97,30 @@ class DatFile : Codable {
                 
                 if (arg1 > 0)
                 {
-                    self.Actions += [ActionComponent(ItemID: arg1, Index: ctr)]
+                    self.Opcodes += [ActionComponent(ItemID: arg1, Index: ctr)]
                     ctr+=1
                 }
                 
                 if (arg2 > 0)
                 {
-                    self.Actions += [ActionComponent(ItemID: arg2, Index: ctr)]
+                    self.Opcodes += [ActionComponent(ItemID: arg2, Index: ctr)]
                     ctr+=1
                 }
             }
             
             // Examine actions and assign arguments to then
             var x = 0
-            self.Actions.forEach { (ac) in
+            self.Opcodes.forEach { (ac) in
                 
-                if Resources.ActionOneItem.contains(ac.ItemID)
-                    || Resources.ActionRoom.contains(ac.ItemID)
-                    || Resources.ActionInteger.contains(ac.ItemID){
+                if Resources.ActionOneItem.contains(ac.ID)
+                    || Resources.ActionRoom.contains(ac.ID)
+                    || Resources.ActionInteger.contains(ac.ID){
                     
                     ac.ArgID += [ActionArgs[x]]
                     x+=1
                 }
-                else if Resources.ActionTwoItems.contains(ac.ItemID)
-                || Resources.ActionItemRoom.contains(ac.ItemID) {
+                else if Resources.ActionTwoItems.contains(ac.ID)
+                || Resources.ActionItemRoom.contains(ac.ID) {
                     ac.ArgID += [ActionArgs[x]]
                     ac.ArgID += [ActionArgs[x + 1]]
                     x+=2
@@ -128,29 +128,30 @@ class DatFile : Codable {
             }
         }
         
+        
         class ActionComponent: Codable {
             
             func AsCondition() -> String {
-                return "ConditionID \(ItemID) ArgID \(ArgID.first ?? 0)"
+                return "ConditionID \(ID) ArgID \(ArgID.first ?? 0)"
             }
             
             func AsAction() -> String {
-                return "ActionID \(ItemID) \(ArgID.count > 0 ? "ArgID " + ArgID.map { String($0) }.joined(separator: ", ") : "")"
+                return "ActionID \(ID) \(ArgID.count > 0 ? "ArgID " + ArgID.map { String($0) }.joined(separator: ", ") : "")"
             }
             
-            var ItemID: Int = 0
+            var ID: Int = 0
             var ArgID: [Int] = []
             var Index: Int
             var Description: String = ""
             
             init(ItemID: Int, ArgID: Int, Index: Int) {
-                self.ItemID = ItemID
+                self.ID = ItemID
                 self.ArgID += [ArgID]
                 self.Index = Index
             }
             
             init(ItemID: Int, Index: Int) {
-                self.ItemID = ItemID
+                self.ID = ItemID
                 self.Index = Index
             }
         }
@@ -211,6 +212,7 @@ class DatFile : Codable {
         }
     }
     
+    
     class Item : Codable {
         var Index: Int = 0
         var GetDrop: String? = nil
@@ -233,8 +235,6 @@ class DatFile : Codable {
         func IsMoved() -> Bool {
             return (OriginalRoom != RoomID)
         }
-
     }
-
 }
 

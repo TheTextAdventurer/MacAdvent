@@ -109,7 +109,7 @@ struct ContentView: View {
                         self.TextRoomView += ("\n\(message)")
                     }
                 }
-                if let fileURL = Bundle.main.url(forResource: "adv04", withExtension: "dat") {
+                if let fileURL = Bundle.main.url(forResource: "adv09", withExtension: "dat") {
                     do {
                         let gameContent = try String(contentsOf: fileURL, encoding: .utf8)
                         advent.load(pGame: gameContent)

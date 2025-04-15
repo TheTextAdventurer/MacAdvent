@@ -245,7 +245,7 @@ class Advent {
                     //GameMessage(pMessage: "Executed action \(action.Index) V:\(action.Verb) N:\(action.Noun)")
                     
                     self.ContinueWithAction = false //may be set if action 73 encountered
-                    ExecuteAction(pActions: action.Actions)
+                    ExecuteOpcodes(pOpcodes: action.Opcodes)
                                         
                     if (self.ContinueWithAction)
                     {
@@ -256,7 +256,7 @@ class Advent {
                             if (TestActionConditions(pConditions: cont.Conditions))
                             {
                                 //GameMessage(pMessage: "Continued action \(cont.Index)")
-                                ExecuteAction(pActions: cont.Actions)
+                                ExecuteOpcodes(pOpcodes: cont.Opcodes)
                             }
                             ctr += 1
                         }
@@ -315,11 +315,11 @@ class Advent {
     }
     
     // Execute the provided actions
-    func ExecuteAction(pActions: [DatFile.Action.ActionComponent] )
+    func ExecuteOpcodes(pOpcodes: [DatFile.Action.ActionComponent] )
     {
-        for action in pActions
+        for opcode in pOpcodes
         {
-            PerformAction(pActionID: action.ItemID, pArgs: action.ArgID)
+            PerformAction(pActionID: opcode.ID, pArgs: opcode.ArgID)
         }
     }
     
@@ -329,7 +329,7 @@ class Advent {
     {
         for condition in pConditions
         {
-            if (ConditionTest(pCondition: condition.ItemID, pArg: condition.ArgID.first ?? 0) == false)
+            if (ConditionTest(pCondition: condition.ID, pArg: condition.ArgID.first ?? 0) == false)
             {
                 return false
             }
@@ -720,11 +720,11 @@ class Advent {
             GameSettings.VerbInt = SearchWordList(pIsVerb: true, pSearchWord: Verb)
             GameSettings.NounInt = Noun != "" ? SearchWordList(pIsVerb: false, pSearchWord: Noun) : -1
            
-            if (GameSettings.VerbInt == -1  && GameSettings.NounInt == -1 && IsDirection(pDir: Noun ) > -1)
+            if (GameSettings.VerbInt == -1  && GameSettings.NounInt == -1 && IsDirection(pDir: Verb ) > -1)
             {
                 //If one word is entered, and it's a direction the verb / noun to GO DIR
                 GameSettings.VerbInt = Resources.Constants.verbGo.rawValue
-                GameSettings.NounInt = IsDirection(pDir: Noun)
+                GameSettings.NounInt = IsDirection(pDir: Verb)
                 
             }
             
