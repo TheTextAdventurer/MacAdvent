@@ -690,6 +690,13 @@ class Advent {
                     }
                 }
                 
+            case "#MAP":
+                Utils.saveFile { url in
+                    if let url = url {
+                        ConvertDat.OutputRoomMap(pOutput: url, pDatFile: self.GameFile!)
+                    }
+                }
+                
             default:
                 GameMessage(pMessage: "Not recognised: \(components[0])")
             }

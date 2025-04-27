@@ -439,6 +439,91 @@ class ConvertDat {
         return escapedString.replacingOccurrences(of: "\n", with: " ")
     }
     
+    // Build a GraphViz map of room
+    static func OutputRoomMap(pOutput: URL, pDatFile: DatFile)
+    {
+        
+        var DotFile:[String] = []
+        
+        DotFile += ["digraph G {"]
+        DotFile += ["node [shape=rect];"]
+        DotFile += ["ranksep=1.0;"]
+        DotFile += ["nodesep=1.0;"]
+        DotFile += ["splines=true;"]
+    
+        // Output the rooms
+        pDatFile.Rooms.forEach{ room in
+            if room.Index > 0
+            {
+                DotFile += ["\(room.Index) [label=\"\(room.Text)\" \(room.Index == pDatFile.Header.startRoom ? "style=filled color=lightgray" : "")];"]
+            }
+        }
+                        
+        // Output the standard conditions between rooms
+        pDatFile.Rooms.forEach{ room in
+            if (room.Index > 0)
+            {
+                room.Exits.enumerated().forEach { (index,exit) in
+                    
+                    if (exit > 0)
+                    {
+                        DotFile += ["\(room.Index) -> \(exit) [label=\"\(Resources.DirectionsLong[index])\" fontsize=10];"]
+                    }
+                }
+            }
+        }
+        
+        
+        
+        let Arrow = "%d -> %d [label=\"%@\" fontsize=10 color=blue];"
+        // Now look for actions that move the player between rooms
+        pDatFile.Actions.forEach{ action in
+            
+            if (action.Verb > 0)
+            {
+                if let opcode = action.Opcodes.filter({ $0.ID == 54}).first { //an action that moves between rooms
+            
+                    let dir = "\(pDatFile.Verbs.filter{$0.Index == action.Verb}.first!.Word) \(pDatFile.Nouns.filter{$0.Index == action.Noun}.first!.Word)"
+                    
+                    if let condition = action.Conditions.filter({$0.ID == 3}).first// player in room
+                    {
+                        
+                        DotFile += [String(format: Arrow, condition.ArgID.first!, opcode.ArgID.first!, dir)]
+                        
+                        //DotFile += ["\(condition.ArgID.first!) -> \(opcode.ArgID.first!)  [label=\"\(dir)\" fontsize=10];"]
+                    }//
+                    else if let condition = action.Conditions.filter({$0.ID == 1}).first// Item in room with player
+                    {
+                        
+                        let item = pDatFile.Items[condition.ArgID.first!]
+                        
+                        if (item.RoomID > 0)
+                        {
+                            // 0 is the inventory room, and an item may be be bought into the game
+                            // as a result of player action, so exclude if 0
+                            
+                            DotFile += [String(format: Arrow, item.RoomID, opcode.ArgID.first!, dir)]
+                            
+                            //DotFile += ["\(item.RoomID) -> \(opcode.ArgID.first!)  [label=\"\(dir)\" fontsize=10];"]
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        // Close
+        DotFile += ["}"]
+        
+        let content = DotFile.joined(separator: "\n")
+        
+        do{
+            try  content.write(to: pOutput, atomically: true, encoding: .utf8)
+        } catch {
+            print("Error encoding user to JSON or writing to file: \(error)")
+        }
+        
+    }
     
     // Output the provided DatFile as a GitHub MD file
     static func OutputAsMD(pOutput: URL, pDatFile: DatFile) {

@@ -28,7 +28,7 @@ class Resources {
         "item '%@' in game",                                // 12
         "item '%@' not in game",                            // 13
         "current counter less than %d",                     // 14
-        "current counter greater than '%@'",                // 15
+        "current counter greater than '%d'",                // 15
         "object '%@' in initial location",                  // 16
         "object '%@' not in initial location",              // 17
         "current counter equals %d"                         // 18
