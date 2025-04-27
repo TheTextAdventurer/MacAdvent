@@ -174,10 +174,10 @@ class Advent {
                 bResult = GameSettings.BitFlags[pArg] == false
             
             case 9 : // "something carried"
-                bResult = GetItemsInRoom(pRoomID: Resources.Constants.inventory.rawValue).count > 0
+                bResult = GetItemsInRoom(pRoomID: Resources.inventoryLocations).count > 0
             
             case 10: // "nothing carried"
-                bResult = GetItemsInRoom(pRoomID: Resources.Constants.inventory.rawValue).count == 0
+                bResult = GetItemsInRoom(pRoomID: Resources.inventoryLocations).count == 0
             
             case 11: // "item '%@' not carried or in room with player"
                 bResult = ConditionTest(pCondition: 5,pArg: pArg) && ConditionTest(pCondition: 4,pArg: pArg)
@@ -355,7 +355,7 @@ class Advent {
                 
                 case 52://"get item '%@', check if can carry" CHECKED
                     GameSettings.TakeSuccess = false
-                    if (GetItemsInRoom(pRoomID: Resources.Constants.inventory.rawValue)).count < GameFile!.Header.maxCarry
+                    if (GetItemsInRoom(pRoomID: Resources.inventoryLocations)).count < GameFile!.Header.maxCarry
                     {
                         ChangeItemLocation(pItemID: ArgID1, pRoomID: Resources.Constants.inventory.rawValue)
                         Look()
@@ -403,7 +403,7 @@ class Advent {
                 case 65://"score"
                 
                     //count treasure items in treasure room
-                    let treasures = GetItemsInRoom(pRoomID: GameFile!.Header.treasureRoom)
+                    let treasures = GetItemsInRoom(pRoomID: [GameFile!.Header.treasureRoom])
                     .filter { $0.Description.first == "*" }
                 
                     let msg = String(format: Resources.sysMessages[13], treasures.count, Int(Double(treasures.count) / Double(GameFile!.Header.totalTreasures) * 100))
@@ -427,7 +427,7 @@ class Advent {
                     else
                     {
                         msg = Resources.sysMessages[9]
-                        let items = GetItemsInRoom(pRoomID: Resources.Constants.inventory.rawValue)
+                        let items = GetItemsInRoom(pRoomID: Resources.inventoryLocations)
                         msg += items.count == 0 ? "\n" + Resources.sysMessages[12]
                             : "\n" + items.map{ $0.Description }.joined(separator: ", ")
                         
@@ -487,7 +487,7 @@ class Advent {
                     {
                         description = String(format: "%@ ", room.Description)
                         
-                        let items = GetItemsInRoom(pRoomID: GameSettings.CurrentRoom)
+                        let items = GetItemsInRoom(pRoomID: [GameSettings.CurrentRoom])
                         if (items.count > 0)
                         {
                             description = String(format: "%@%@%@%@%@%@"
@@ -583,11 +583,11 @@ class Advent {
     }
     
     //  Return all the items in the specified room
-    func GetItemsInRoom(pRoomID: Int) -> [DatFile.Item]
+    func GetItemsInRoom(pRoomID: [Int]) -> [DatFile.Item]
     {
         var items : [DatFile.Item] = []
         for item in GameFile!.Items {
-            if item.RoomID == pRoomID {
+            if pRoomID.contains(item.RoomID) {
                 items.append(item)
             }
         }

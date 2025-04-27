@@ -96,7 +96,7 @@ class Resources {
     
     static let playerPrompt = "Tell me what to do: "
      
-    private static let inventoryLocations = [-1, 255]
+    static let inventoryLocations = [-1, 255]   //Player inventory
      
      /// Used by all Scott Adams adventure games. Do not change.
      enum Constants: Int {
