@@ -147,10 +147,10 @@ class Advent {
         switch pCondition {
             
             case 0 : // "item '%@' carried"
-                bResult = ItemInLocationRoom(pItemID: pArg, pRoomID: Resources.Constants.inventory.rawValue)
+                bResult = ItemInLocationRoom(pItemID: pArg, pRoomID: Resources.inventoryLocations)
             
             case 1 : // "item '%@' in room with player"
-            bResult = ItemInLocationRoom(pItemID: pArg, pRoomID: GameSettings.CurrentRoom)
+                bResult = ItemInLocationRoom(pItemID: pArg, pRoomID: Resources.inventoryLocations)
             
             case 2 : // "item '%@' carried or in room with player"
                 bResult = ConditionTest(pCondition: 0, pArg: pArg)
@@ -571,9 +571,9 @@ class Advent {
     }
     
     // Check if the item is in the room, note that the inventory is treated as a room
-    func ItemInLocationRoom (pItemID: Int, pRoomID: Int) -> Bool
+    func ItemInLocationRoom (pItemID: Int, pRoomID: [Int]) -> Bool
     {
-        return GameFile!.Items.first { $0.Index == pItemID && $0.RoomID == pRoomID } != nil
+        return GameFile!.Items.first { $0.Index == pItemID && pRoomID.contains($0.RoomID) } != nil
     }
     
     // Quick trigger for refreshing room
