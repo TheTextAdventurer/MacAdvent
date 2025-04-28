@@ -150,7 +150,7 @@ class Advent {
                 bResult = ItemInLocationRoom(pItemID: pArg, pRoomID: Resources.inventoryLocations)
             
             case 1 : // "item '%@' in room with player"
-                bResult = ItemInLocationRoom(pItemID: pArg, pRoomID: Resources.inventoryLocations)
+                bResult = ItemInLocationRoom(pItemID: pArg, pRoomID: [self.GameSettings.CurrentRoom])
             
             case 2 : // "item '%@' carried or in room with player"
                 bResult = ConditionTest(pCondition: 0, pArg: pArg)
