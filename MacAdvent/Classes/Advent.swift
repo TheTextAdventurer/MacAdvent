@@ -462,8 +462,9 @@ class Advent {
                     let i1 = GetItem(pIndex: ArgID1)
                     let i2 = GetItem(pIndex: ArgID2)
                     let tmp = i1!.RoomID
-                    i1!.RoomID = i2!.RoomID
-                    i2!.RoomID = tmp
+ 
+                    ChangeItemLocation(pItemID: i1!.Index, pRoomID: i2!.RoomID)
+                    ChangeItemLocation(pItemID: i2!.Index, pRoomID: tmp)
                     
                 case 73://"continue with next action"
                     self.ContinueWithAction = true
@@ -811,7 +812,7 @@ class Advent {
            return nil // Return nil if no match is found
     }
     
-    // An items's location has changed, update settings
+    // Change an item's location, update GameSettings
     func ChangeItemLocation (pItemID: Int, pRoomID: Int)
     {
         let item = GameFile!.Items[pItemID]
