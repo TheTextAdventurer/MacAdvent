@@ -487,11 +487,8 @@ class ConvertDat {
                     
                     if let condition = action.Conditions.filter({$0.ID == 3}).first// player in room
                     {
-                        
                         DotFile += [String(format: Arrow, condition.ArgID.first!, opcode.ArgID.first!, dir)]
-                        
-                        //DotFile += ["\(condition.ArgID.first!) -> \(opcode.ArgID.first!)  [label=\"\(dir)\" fontsize=10];"]
-                    }//
+                    }
                     else if let condition = action.Conditions.filter({$0.ID == 1}).first// Item in room with player
                     {
                         
@@ -501,10 +498,7 @@ class ConvertDat {
                         {
                             // 0 is the inventory room, and an item may be be bought into the game
                             // as a result of player action, so exclude if 0
-                            
                             DotFile += [String(format: Arrow, item.RoomID, opcode.ArgID.first!, dir)]
-                            
-                            //DotFile += ["\(item.RoomID) -> \(opcode.ArgID.first!)  [label=\"\(dir)\" fontsize=10];"]
                         }
                     }
                 }

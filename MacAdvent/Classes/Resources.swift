@@ -149,7 +149,7 @@ class Resources {
         , ["X", "EXAMINE"]
         , ["Z", "WAIT"]
         , ["T", "TAKE"]
-        , ["D", "DROP"]
+        , ["P", "PUT"]
     ]
 
 }

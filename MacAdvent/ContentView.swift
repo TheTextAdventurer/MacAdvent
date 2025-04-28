@@ -13,7 +13,7 @@ import UniformTypeIdentifiers
 struct CustomFontModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.custom("Courier New", size: 14)) // Specify your font here
+            .font(.custom("Courier New", size: 16)) // Specify your font here
     }
 }
 
