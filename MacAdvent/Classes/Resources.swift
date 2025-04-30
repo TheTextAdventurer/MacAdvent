@@ -52,7 +52,7 @@ class Resources {
         "clear darkness flag",                                                  // 57  NO ARGS*
         "set %d flag",                                                          // 58  FLAG INTEGER*
         "Item '%@' is removed from the game (put in room 0)",                   // 59  ONE ITEM*
-        "set %d flag",                                                          // 60  FLAG INTEGER*
+        "clear %d flag",                                                        // 60  FLAG INTEGER*
         "Death, clear dark flag, move to last room",                            // 61  NO ARGS*
         "item '%@' is moved to room %d",                                        // 62  ITEM ROOM*
         "game over",                                                            // 63  NO ARGS*
