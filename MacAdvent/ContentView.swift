@@ -13,7 +13,7 @@ import UniformTypeIdentifiers
 struct CustomFontModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.custom("Courier New", size: 16)) // Specify your font here
+            .font(.custom("Courier New", size: 17)) // Specify your font here
     }
 }
 
@@ -43,7 +43,7 @@ struct ContentView: View {
                     .padding(.horizontal, 5)
                     .padding(.vertical, 5)
                     .cornerRadius(8)
-                    .frame(minWidth: 300, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity)
+                    .frame(minWidth: 400, maxWidth: .infinity, minHeight: 400, maxHeight: .infinity)
                     .disabled(true)
                     .customFont()
 
@@ -109,7 +109,7 @@ struct ContentView: View {
                         self.TextRoomView += ("\n\(message)")
                     }
                 }
-                if let fileURL = Bundle.main.url(forResource: "adv09", withExtension: "dat") {
+                if let fileURL = Bundle.main.url(forResource: "adv08", withExtension: "dat") {
                     do {
                         let gameContent = try String(contentsOf: fileURL, encoding: .utf8)
                         advent.load(pGame: gameContent)

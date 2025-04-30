@@ -45,7 +45,7 @@ class Advent {
             self.AdventureNumber = pAdventureNumber
         }
         
-        //
+        //  An item has moved, add or update as appropriate
         func AddMovedItem(_ pItemID: Int, _ pRoomID: Int)
         {
             if let index = MovedItems.firstIndex(where: { $0.first == pItemID}  ) {
@@ -57,7 +57,7 @@ class Advent {
             }
         }
         
-        //
+        //  Remove an item
         func RemovedMoveItem(_ pItemID: Int)
         {
             if let index = MovedItems.firstIndex(where: { $0.first == pItemID}  ) {

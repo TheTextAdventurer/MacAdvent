@@ -225,7 +225,7 @@ class ConvertDat {
         var indexctr = 0
         Items.forEach {item in
             
-            let itemDescription = trimCharacter( input: firstMatch(for: "\"([^\"/]*)", in: item), trimCharacter: "\"")
+            let itemDescription = trimWhitespace(from: trimCharacter( input: firstMatch(for: "\"([^\"/]*)", in: item), trimCharacter: "\""))
             let getDrop =  trimCharacter( input: firstMatch(for: "/([^/]+)/" , in: item), trimCharacter: "/")
             let roomID = firstMatch(for: "(-?\\d+)$", in: item)
             let item = DatFile.Item(pRoomID: Int(roomID) ?? 0, pDescription: itemDescription, pGetDrop: getDrop, pIndex: indexctr)
@@ -452,10 +452,22 @@ class ConvertDat {
         DotFile += ["splines=true;"]
     
         // Output the rooms
+        var style:String = ""
         pDatFile.Rooms.forEach{ room in
             if room.Index > 0
             {
-                DotFile += ["\(room.Index) [label=\"\(room.Text)\" \(room.Index == pDatFile.Header.startRoom ? "style=filled color=lightgray" : "")];"]
+                style = "";
+                if (room.Index == pDatFile.Header.startRoom)
+                {
+                    style = "color=lightgrey penwidth=4";
+                }
+                else if (room.Index == pDatFile.Header.treasureRoom)
+                {
+                    style = "color=blue penwidth=4";
+                }
+                
+                
+                DotFile += ["\(room.Index) [label=\"\(room.Text)\" \(style)];"]
             }
         }
                         
